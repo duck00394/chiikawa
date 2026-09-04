@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吉伊卡哇吊飾收藏圖鑑</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+  :root{
+    --cream:#FFF7EC;
+    --cream-deep:#FFEFDC;
+    --pink:#FF8FA6;
+    --pink-deep:#FF6E8C;
+    --pink-pale:#FFE1E8;
+    --yellow:#FFCF5C;
+    --yellow-pale:#FFF1CE;
+    --brown:#4A3B33;
+    --muted:#A7968C;
+    --line:#F0E2D0;
+    --white:#FFFFFF;
+    --green:#5FAE82;
+    --green-pale:#E7F5EC;
+    --red:#E8636F;
+    --red-pale:#FDE7E9;
+    --teal:#4FB3B3;
+    --teal-pale:#E1F4F4;
+    --wood:#C89B6E;
+    --wood-deep:#A9794D;
+    --shadow: 0 6px 18px rgba(180,120,90,0.10);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans TC','Baloo 2',sans-serif;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(255,207,92,0.25) 0, transparent 40%),
+      radial-gradient(circle at 88% 18%, rgba(255,143,166,0.18) 0, transparent 45%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+    color:var(--brown);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .stage{
+    max-width:460px;
+    margin:0 auto;
+    min-height:100vh;
+    background:transparent;
+    position:relative;
+    padding-bottom:96px;
+  }
+
+  .stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+  .stars span{position:absolute;font-size:14px;color:var(--yellow);opacity:.55;}
+
+  header.top{
+    position:relative;z-index:1;
+    padding:28px 20px 14px;
+    text-align:center;
+  }
+  .settings-btn{
+    position:absolute;top:24px;right:20px;
+    width:34px;height:34px;border-radius:50%;
+    background:var(--white);border:1px solid var(--line);
+    box-shadow:var(--shadow);font-size:15px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    z-index:2;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:5px 12px 5px 8px;
+    border-radius:999px;
+    font-size:12px;
+    color:var(--pink-deep);
+    font-weight:700;
+    box-shadow:var(--shadow);
+    margin-bottom:10px;
+  }
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);}
+  h1.title{
+    font-family:'Baloo 2','Noto Sans TC',sans-serif;
+    font-weight:800;
+    font-size:26px;
+    margin:0 0 4px;
+    letter-spacing:.5px;
+  }
+  p.subtitle{
+    margin:0;
+    font-size:13px;
+    color:var(--muted);
+  }
+
+  /* main tabs */
+  .main-tabs{
+    position:relative;z-index:1;
+    margin:14px 20px 0;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:5px;
+    display:flex;
+    gap:4px;
+    box-shadow:var(--shadow);
+  }
+  .main-tab{
+    flex:1;text-align:center;padding:10px 0;border-radius:12px;
+    font-size:13.5px;font-weight:700;color:var(--muted);cursor:pointer;
+    font-family:'Noto Sans TC',sans-serif;
+  }
+  .main-tab.active{background:var(--pink);color:#fff;}
+
+  .rate-bar{
+    position:relative;z-index:1;
+    margin:14px 20px 0;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:10px 14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:var(--shadow);
+    font-size:13px;
+  }
+  .rate-bar .label{color:var(--muted);font-weight:500;}
+  .rate-bar .field{display:flex;align-items:center;gap:6px;font-weight:700;}
+  .rate-bar input{
+    width:64px;
+    border:none;
+    border-bottom:2px solid var(--pink-pale);
+    background:transparent;
+    font-family:'Baloo 2',sans-serif;
+    font-size:15px;
+    font-weight:700;
+    color:var(--pink-deep);
+    text-align:right;
+    padding:2px 0;
+  }
+  .rate-bar input:focus{outline:none;border-bottom-color:var(--pink);}
+
+  .external-link-bar{
+    position:relative;z-index:1;
+    margin:12px 20px 0;
+    display:flex;align-items:center;justify-content:space-between;
+    background:var(--white);
+    border:1px dashed var(--pink);
+    border-radius:14px;
+    padding:10px 14px;
+    font-size:11.5px;
+    box-shadow:var(--shadow);
+  }
+  .external-link-bar .txt{color:var(--brown);font-weight:600;line-height:1.4;}
+  .external-link-bar .txt b{color:var(--pink-deep);}
+  .external-link-bar a.go-btn{
+    flex:0 0 auto;margin-left:10px;
+    background:var(--pink);color:#fff;text-decoration:none;
+    font-size:11px;font-weight:700;padding:8px 12px;border-radius:999px;white-space:nowrap;
+  }
+
+  .stats-hero{
+    position:relative;z-index:1;
+    margin:16px 20px 0;
+    background:linear-gradient(135deg, var(--pink) 0%, var(--pink-deep) 100%);
+    border-radius:20px;
+    padding:18px 20px;
+    color:#fff;
+    box-shadow:0 10px 24px rgba(255,110,140,0.28);
+  }
+  .stats-hero .hero-top{display:flex;align-items:center;justify-content:space-between;}
+  .stats-hero .hero-label{font-size:12px;opacity:.85;font-weight:500;}
+  .eye-btn{
+    background:rgba(255,255,255,.25);border:none;color:#fff;width:26px;height:26px;border-radius:50%;
+    cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;
+  }
+  .stats-hero .hero-value{
+    font-family:'Baloo 2',sans-serif;
+    font-size:32px;
+    font-weight:800;
+    margin-top:2px;
+    letter-spacing:.3px;
+  }
+  .stats-hero .hero-sub{font-size:12px;opacity:.85;margin-top:6px;}
+
+  .stats-hero.compact{
+    padding:10px 14px;
+    border-radius:14px;
+    margin:0 0 10px;
+  }
+  .stats-hero.compact .hero-top{margin-bottom:1px;}
+  .stats-hero.compact .hero-label{font-size:11px;}
+  .stats-hero.compact .hero-value{font-size:20px;margin-top:0;}
+  .stats-hero.compact .hero-sub{font-size:10px;margin-top:2px;}
+
+  .stats-grid{
+    position:relative;z-index:1;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:10px 20px 0;
+  }
+  .stat-card{
+    background:var(--white);
+    border:2px solid var(--pink);
+    border-radius:18px;
+    padding:12px 14px;
+    box-shadow:var(--shadow);
+  }
+  .stat-card .k{font-size:11.5px;color:var(--muted);font-weight:500;}
+  .stat-card .v{
+    font-family:'Baloo 2',sans-serif;
+    font-size:19px;
+    font-weight:700;
+    margin-top:2px;
+  }
+  .stat-card .v.green{color:var(--green);}
+  .stat-card .v.red{color:var(--red);}
+  .stat-card .sub{font-size:10.5px;color:var(--muted);margin-top:2px;}
+
+  .budget-section{
+    position:relative;z-index:1;
+    margin:14px 20px 0;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:14px 16px;
+    box-shadow:var(--shadow);
+  }
+  .budget-section.budget-main{
+    margin-top:20px;
+    border:2px solid var(--pink);
+    padding:16px 18px;
+  }
+  .budget-section.budget-main .budget-head .ttl{font-size:15px;}
+  .budget-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .budget-head .ttl{font-size:13px;font-weight:700;}
+  .budget-head input[type=month]{
+    border:1px solid var(--line);border-radius:10px;padding:5px 8px;font-size:11.5px;
+    font-family:inherit;color:var(--brown);background:var(--cream);
+  }
+  .budget-row{margin-bottom:10px;}
+  .budget-row:last-child{margin-bottom:0;}
+  .budget-row .top-line{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:5px;}
+  .budget-row .who{display:flex;align-items:center;gap:6px;font-weight:700;}
+  .who-dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
+  .who-dot.m1{background:var(--pink);}
+  .who-dot.m2{background:var(--teal);}
+  .budget-row .amt{color:var(--muted);font-weight:500;}
+  .bar-track{height:8px;border-radius:99px;background:var(--cream-deep);overflow:hidden;}
+  .bar-fill{height:100%;border-radius:99px;transition:width .2s ease;}
+  .bar-fill.ok{background:var(--green);}
+  .bar-fill.warn{background:var(--yellow);}
+  .bar-fill.over{background:var(--red);}
+  .budget-note{font-size:10.5px;margin-top:4px;font-weight:600;}
+  .budget-note.over{color:var(--red);}
+  .budget-note.ok{color:var(--muted);}
+  .no-budget{font-size:11px;color:var(--muted);}
+
+  .savings-section{
+    position:relative;z-index:1;
+    margin:14px 20px 0;
+    background:linear-gradient(135deg, var(--yellow-pale) 0%, #FFF8E0 100%);
+    border:1px solid #F3D98B;
+    border-radius:18px;
+    padding:14px 16px;
+    box-shadow:var(--shadow);
+  }
+  .savings-section .budget-head .ttl{color:#8A6A1E;}
+  .savings-eye-btn{
+    background:rgba(138,106,30,.12);color:#8A6A1E;
+  }
+  .savings-row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;margin-bottom:8px;}
+  .savings-row:last-child{margin-bottom:0;}
+  .savings-row .who{display:flex;align-items:center;gap:6px;font-weight:700;color:#4A3B33;}
+  .savings-row .val{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:17px;color:#B5841E;}
+  .savings-hint{font-size:10px;color:#B29659;margin-top:6px;line-height:1.5;}
+
+  .mini-filters{
+    position:relative;z-index:1;
+    display:flex;gap:8px;margin:14px 20px 0;
+  }
+  .member-row{
+    display:flex;gap:6px;flex:1.2;min-width:0;
+  }
+  .member-chip{
+    flex:1;text-align:center;min-width:0;
+    background:var(--white);border:1px solid var(--line);
+    padding:8px 4px;border-radius:12px;font-size:11.5px;font-weight:700;
+    cursor:pointer;color:var(--brown);display:flex;align-items:center;justify-content:center;gap:4px;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .member-chip.active{background:var(--brown);border-color:var(--brown);color:#fff;}
+  .member-chip .who-dot{width:7px;height:7px;flex:0 0 auto;}
+
+  .status-tabs{
+    display:flex;gap:6px;flex:1;
+  }
+  .status-tab{
+    flex:1;text-align:center;background:var(--white);border:1px solid var(--line);
+    padding:8px 0;border-radius:12px;font-size:11.5px;font-weight:700;cursor:pointer;color:var(--brown);
+  }
+  .status-tab.active{background:var(--pink-deep);border-color:var(--pink-deep);color:#fff;}
+
+  .stats-toggle{
+    width:100%;background:rgba(255,255,255,.2);border:none;color:#fff;
+    font-size:11px;font-weight:700;padding:7px 0;border-radius:10px;margin-top:10px;cursor:pointer;
+    font-family:'Noto Sans TC',sans-serif;
+  }
+  .stats-toggle.detail-stats-toggle{
+    position:relative;z-index:1;
+    margin:14px 20px 0;
+    width:calc(100% - 40px);
+    background:var(--white);
+    border:1px solid var(--line);
+    color:var(--pink-deep);
+    box-shadow:var(--shadow);
+    padding:10px 0;
+  }
+
+  .controls{
+    position:relative;z-index:1;
+    margin:12px 20px 0;
+    display:flex;
+    gap:8px;
+  }
+  .search-box{
+    flex:1;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:10px 14px;
+    font-size:13.5px;
+    color:var(--brown);
+    box-shadow:var(--shadow);
+  }
+  .search-box:focus{outline:none;border-color:var(--pink);}
+  .sort-select{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:10px 10px;
+    font-size:12.5px;
+    color:var(--brown);
+    box-shadow:var(--shadow);
+    font-family:inherit;
+  }
+
+  .chips{
+    position:relative;z-index:1;
+    display:flex;
+    gap:8px;
+    margin:12px 0 0;
+    padding:0 20px 4px;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .chips::-webkit-scrollbar{display:none;}
+  .chip{
+    flex:0 0 auto;
+    background:var(--white);
+    border:1px solid var(--line);
+    color:var(--brown);
+    font-size:12.5px;
+    font-weight:600;
+    padding:7px 14px;
+    border-radius:999px;
+    white-space:nowrap;
+    cursor:pointer;
+    transition:transform .12s ease;
+  }
+  .chip.active{
+    background:var(--pink);
+    border-color:var(--pink);
+    color:#fff;
+  }
+  .chip:active{transform:scale(.96);}
+
+  /* detail grid (明細) */
+  .grid{
+    position:relative;z-index:1;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:16px 20px 0;
+  }
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+  }
+  .card .img-wrap{
+    position:relative;
+    aspect-ratio:1/1;
+    background:var(--cream-deep);
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .card .img-wrap img{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  .sold-stamp{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    pointer-events:none;
+  }
+  .sold-stamp span{
+    border:3px solid #D6323F;color:#D6323F;background:rgba(255,255,255,.65);
+    font-weight:900;font-size:15px;letter-spacing:4px;padding:3px 10px;
+    transform:rotate(-18deg);border-radius:4px;
+  }
+  .card-actions{
+    position:absolute;top:6px;right:6px;
+    display:flex;gap:5px;
+  }
+  .icon-btn{
+    width:26px;height:26px;border-radius:50%;
+    background:rgba(255,255,255,.92);
+    border:none;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;cursor:pointer;
+    box-shadow:0 2px 6px rgba(0,0,0,.12);
+  }
+  .owner-badge{
+    position:absolute;top:6px;left:6px;
+    background:rgba(255,255,255,.92);
+    border-radius:999px;
+    padding:3px 8px 3px 6px;
+    font-size:10px;font-weight:700;
+    display:flex;align-items:center;gap:4px;
+    box-shadow:0 2px 6px rgba(0,0,0,.12);
+  }
+  .card .body{padding:9px 10px 11px;flex:1;display:flex;flex-direction:column;}
+  .card .name{
+    font-size:12.5px;font-weight:700;line-height:1.35;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+    min-height:34px;
+  }
+  .tag-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px;}
+  .card .tag{
+    display:inline-block;
+    background:var(--pink-pale);
+    color:var(--pink-deep);
+    font-size:10.5px;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:999px;
+  }
+  .card .tag.unpaid{background:var(--yellow-pale);color:#8A6A1E;}
+  .card .price-row{
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1px dashed var(--line);
+    font-size:11px;
+  }
+  .card .price-row .line{display:flex;justify-content:space-between;margin-top:2px;}
+  .card .price-row .lbl{color:var(--muted);}
+  .card .price-row .paid{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:14px;color:var(--brown);}
+  .card .diff{font-size:10px;margin-top:3px;font-weight:700;}
+  .card .diff.up{color:var(--red);}
+  .card .diff.down{color:var(--green);}
+  .card a.site-link{
+    display:block;margin-top:6px;font-size:10.5px;color:var(--pink-deep);text-decoration:none;font-weight:600;
+  }
+
+  /* gallery (圖鑑) shelf */
+  .shelf{
+    position:relative;z-index:1;
+    margin:16px 20px 0;
+    background:linear-gradient(180deg, var(--wood) 0%, var(--wood-deep) 100%);
+    border-radius:20px;
+    padding:14px;
+    box-shadow:0 10px 24px rgba(120,80,40,0.25);
+  }
+  .shelf-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
+    background:var(--cream);
+    border-radius:12px;
+    padding:10px;
+  }
+  .shelf-item{
+    position:relative;aspect-ratio:1/1;background:var(--white);border-radius:10px;overflow:hidden;
+    border:1px solid var(--line);cursor:pointer;
+  }
+  .shelf-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  .shelf-item .noimg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--muted);}
+  .shelf-item .sold-stamp span{font-size:9px;padding:1px 4px;border-width:2px;letter-spacing:1px;}
+  .shelf-item .unpaid-dot{position:absolute;top:3px;right:3px;width:8px;height:8px;border-radius:50%;background:var(--yellow);border:1px solid #fff;}
+
+  .empty{
+    position:relative;z-index:1;
+    margin:40px 20px 0;
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+    padding:30px 16px;
+    background:var(--white);
+    border:1px dashed var(--line);
+    border-radius:18px;
+  }
+  .empty .emoji{font-size:36px;display:block;margin-bottom:10px;}
+
+  .fab{
+    position:fixed;
+    left:50%;
+    bottom:22px;
+    transform:translateX(-50%);
+    max-width:420px;width:calc(100% - 40px);
+    background:var(--pink);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:14px 0;
+    font-size:14.5px;
+    font-weight:700;
+    font-family:'Noto Sans TC',sans-serif;
+    box-shadow:0 10px 24px rgba(255,110,140,0.38);
+    cursor:pointer;
+    z-index:5;
+    display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+  .fab:active{transform:translateX(-50%) scale(.98);}
+
+  .overlay{
+    position:fixed;inset:0;background:rgba(74,59,51,0.45);
+    display:none;align-items:flex-end;justify-content:center;
+    z-index:20;
+  }
+  .overlay.show{display:flex;}
+  .sheet{
+    background:var(--cream);
+    width:100%;max-width:460px;
+    border-radius:24px 24px 0 0;
+    max-height:92vh;
+    overflow-y:auto;
+    padding:18px 20px 28px;
+    animation:slideup .22s ease;
+  }
+  @keyframes slideup{from{transform:translateY(30px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+  .sheet-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .sheet-head h2{font-size:17px;margin:0;font-family:'Baloo 2',sans-serif;font-weight:700;}
+  .close-btn{
+    width:28px;height:28px;border-radius:50%;border:none;background:var(--white);
+    box-shadow:var(--shadow);font-size:14px;cursor:pointer;color:var(--muted);
+  }
+
+  .owner-picker{display:flex;gap:8px;margin-bottom:14px;}
+  .owner-pick-btn{
+    flex:1;border:1px solid var(--line);background:var(--white);border-radius:12px;
+    padding:10px 0;font-size:12.5px;font-weight:700;color:var(--brown);cursor:pointer;font-family:inherit;
+    display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+  .owner-pick-btn.active{background:var(--brown);border-color:var(--brown);color:#fff;}
+
+  .upload-box{
+    border:2px dashed var(--pink-pale);
+    border-radius:14px;
+    padding:16px;
+    text-align:center;
+    background:var(--white);
+    cursor:pointer;
+    margin-bottom:6px;
+    position:relative;
+    overflow:hidden;
+    min-height:70px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .upload-box .placeholder-txt{font-size:12.5px;color:var(--muted);font-weight:600;}
+  .upload-box img{max-width:100%;max-height:140px;border-radius:10px;display:block;}
+  .upload-hint{font-size:10.5px;color:var(--muted);margin:6px 2px 13px;line-height:1.5;}
+  .remove-photo-link{color:var(--red);font-weight:700;font-size:11px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;}
+
+  .mode-toggle{display:flex;background:var(--white);border-radius:12px;padding:4px;margin-bottom:14px;border:1px solid var(--line);}
+  .mode-toggle button{
+    flex:1;border:none;background:transparent;padding:9px 0;font-size:12.5px;font-weight:700;
+    color:var(--muted);border-radius:9px;cursor:pointer;font-family:inherit;
+  }
+  .mode-toggle button.active{background:var(--pink);color:#fff;}
+
+  .field-group{margin-bottom:13px;}
+  .field-group label{
+    display:block;font-size:12px;font-weight:700;color:var(--brown);margin-bottom:5px;
+  }
+  .field-group .hint{font-size:10.5px;color:var(--muted);font-weight:400;margin-left:4px;}
+  select.input, input.input, textarea.input{
+    width:100%;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:11px 12px;
+    font-size:13.5px;
+    font-family:inherit;
+    color:var(--brown);
+  }
+  select.input:focus,input.input:focus,textarea.input:focus{outline:none;border-color:var(--pink);}
+
+  .char-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:8px;}
+  .char-pill{
+    border:1px solid var(--line);background:var(--white);border-radius:999px;
+    padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;color:var(--brown);
+  }
+  .char-pill.active{background:var(--pink);border-color:var(--pink);color:#fff;}
+  .char-pill-hint{font-size:10.5px;color:var(--muted);line-height:1.5;margin-bottom:12px;}
+
+  .preview-box{
+    display:flex;gap:12px;align-items:center;
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:10px;margin-bottom:13px;
+  }
+  .preview-box .thumb{
+    width:64px;height:64px;border-radius:10px;background:var(--cream-deep);flex:0 0 auto;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:22px;
+  }
+  .preview-box .thumb img{width:100%;height:100%;object-fit:cover;}
+  .preview-box .info{font-size:12px;flex:1;}
+  .preview-box .info .official-jpy{color:var(--muted);}
+  .preview-box .info .official-twd{
+    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:17px;color:var(--pink-deep);margin-top:2px;
+  }
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+  .toggle-row{
+    display:flex;align-items:center;justify-content:space-between;
+    background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:11px 13px;margin-bottom:10px;font-size:12.5px;font-weight:700;
+  }
+  .toggle-row .desc{font-weight:400;font-size:10.5px;color:var(--muted);margin-top:2px;}
+  .switch{position:relative;width:40px;height:23px;flex:0 0 auto;}
+  .switch input{opacity:0;width:100%;height:100%;position:absolute;margin:0;cursor:pointer;z-index:1;}
+  .switch .track{position:absolute;inset:0;background:var(--line);border-radius:99px;transition:.15s;}
+  .switch .knob{position:absolute;top:2px;left:2px;width:19px;height:19px;background:#fff;border-radius:50%;transition:.15s;box-shadow:0 1px 3px rgba(0,0,0,.25);}
+  .switch input:checked ~ .track{background:var(--pink);}
+  .switch input:checked ~ .knob{transform:translateX(17px);}
+  .sold-fields{display:none;margin-top:-2px;margin-bottom:10px;}
+  .sold-fields.show{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+  .warn-box{
+    background:var(--yellow-pale);
+    border:1px solid #F3D98B;
+    border-radius:12px;
+    padding:10px 12px;
+    font-size:11.5px;
+    color:#8A6A1E;
+    margin-bottom:12px;
+    display:none;
+    line-height:1.5;
+  }
+  .warn-box.show{display:block;}
+  .warn-box label{display:flex;align-items:flex-start;gap:6px;margin-top:6px;font-weight:600;cursor:pointer;}
+  .warn-box input[type=checkbox]{margin-top:2px;}
+
+  .budget-warn-box{
+    background:var(--red-pale);
+    border:1px solid #F3B9BE;
+    border-radius:12px;
+    padding:10px 12px;
+    font-size:11.5px;
+    color:#A6414B;
+    margin-bottom:12px;
+    display:none;
+    line-height:1.5;
+    font-weight:600;
+  }
+  .budget-warn-box.show{display:block;}
+
+  .save-btn{
+    width:100%;background:var(--pink-deep);color:#fff;border:none;border-radius:14px;
+    padding:14px 0;font-size:14.5px;font-weight:700;font-family:'Noto Sans TC',sans-serif;
+    cursor:pointer;margin-top:6px;
+  }
+  .save-btn:disabled{background:#E9C9CF;cursor:not-allowed;}
+  .delete-link{
+    display:block;text-align:center;color:var(--red);font-size:12px;font-weight:700;
+    margin-top:12px;background:none;border:none;width:100%;padding:8px;cursor:pointer;font-family:inherit;
+  }
+
+  .foot-note{
+    position:relative;z-index:1;text-align:center;font-size:10.5px;color:var(--muted);margin:22px 30px 0;line-height:1.6;
+  }
+
+  .settings-block{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:14px;
+  }
+  .settings-block .sb-title{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;margin-bottom:10px;}
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="stars">
+    <span style="top:60px;left:8%;">✦</span>
+    <span style="top:140px;right:10%;">✦</span>
+    <span style="top:320px;left:6%;">★</span>
+    <span style="top:460px;right:8%;">✦</span>
+    <span style="top:640px;left:12%;">★</span>
+    <span style="top:820px;right:14%;">✦</span>
+  </div>
+
+  <button class="settings-btn" id="settingsBtn" title="成員與預算設定">⚙</button>
+
+  <header class="top">
+    <div class="badge"><span class="dot"></span>CHIIKAWA COLLECTOR'S GUIDE</div>
+    <h1 class="title">吉伊卡哇吊飾圖鑑</h1>
+    <p class="subtitle">兩人共用的收藏記錄本</p>
+  </header>
+
+  <div class="main-tabs">
+    <div class="main-tab" id="tabGallery">圖鑑</div>
+    <div class="main-tab" id="tabDetail">明細</div>
+  </div>
+
+  <!-- ===== 明細 tab content ===== -->
+  <div id="detailPane">
+    <div class="budget-section budget-main">
+      <div class="budget-head">
+        <span class="ttl">📅 月預算</span>
+        <input type="month" id="budgetMonth">
+      </div>
+      <div id="budgetRows"></div>
+    </div>
+
+    <div class="savings-section">
+      <div class="budget-head">
+        <span class="ttl">🐷 存款</span>
+        <button class="eye-btn savings-eye-btn" id="savingsEyeBtn">👁</button>
+      </div>
+      <div id="savingsRows"></div>
+      <div class="savings-hint">每個月結束後，花費沒超出預算的部分會存進來；超支的月份則會從存款扣掉超支的金額（存款可能變成負的）。</div>
+    </div>
+
+    <button class="stats-toggle detail-stats-toggle" id="statsToggle">▾ 更多統計（淨額/原價/差額/收藏款數/賣出回收）</button>
+
+    <div id="statsExpand" style="display:none;margin:0 20px;">
+      <div class="stats-hero compact">
+        <div class="hero-top">
+          <span class="hero-label">淨額（買入－賣出）</span>
+          <button class="eye-btn" id="eyeBtn">👁</button>
+        </div>
+        <div class="hero-value" id="heroNet">NT$•••</div>
+        <div class="hero-sub" id="heroSub">買入 NT$•••（含運 NT$•••）</div>
+      </div>
+
+      <div class="stats-grid" style="margin:0;">
+        <div class="stat-card">
+          <div class="k">原價總額</div>
+          <div class="v" id="statOfficial">NT$•••</div>
+          <div class="sub">官網定價換算</div>
+        </div>
+        <div class="stat-card">
+          <div class="k">與原價差額</div>
+          <div class="v" id="statDiff">NT$•••</div>
+          <div class="sub" id="statDiffSub">總額比原價</div>
+        </div>
+        <div class="stat-card">
+          <div class="k">收藏款數</div>
+          <div class="v" id="statCount">0</div>
+          <div class="sub" id="statCountSub">不含已賣出的 0 款</div>
+        </div>
+        <div class="stat-card">
+          <div class="k">賣出回收</div>
+          <div class="v green" id="statResale">NT$•••</div>
+          <div class="sub" id="statResaleSub">已賣出 0 款</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mini-filters">
+    <div class="member-row" id="memberRow"></div>
+    <div class="status-tabs">
+      <div class="status-tab active" id="statusActive">收藏中</div>
+      <div class="status-tab" id="statusSold">已賣出</div>
+    </div>
+  </div>
+
+  <div id="detailControls" class="controls">
+    <input class="search-box" id="searchInput" type="text" placeholder="搜尋我們的收藏…">
+    <select class="sort-select" id="sortSelect">
+      <option value="new">最近加入</option>
+      <option value="name">名稱排序</option>
+      <option value="priceHigh">實付高→低</option>
+      <option value="priceLow">實付低→高</option>
+    </select>
+  </div>
+
+  <div class="chips" id="chipsRow"></div>
+
+  <!-- 明細列表 -->
+  <div class="grid" id="grid"></div>
+
+
+  <!-- 圖鑑展示櫃 -->
+  <div class="shelf" id="shelfWrap">
+    <div class="shelf-grid" id="shelfGrid"></div>
+  </div>
+
+  <div class="empty" id="emptyState" style="display:none;">
+    <span class="emoji">🐾</span>
+    還沒有收藏紀錄<br>點下方「+ 新增收藏」開始記錄吧！
+  </div>
+
+  <p class="foot-note">這個圖鑑是共用的：兩人開啟同一個連結都會看到一樣的收藏與花費，新增/編輯/刪除也會同步。<br>「查看官網」連結會開啟吉伊卡哇市場官方商品頁。</p>
+</div>
+
+<button class="fab" id="fabAdd">＋ 新增收藏</button>
+
+<!-- 新增/編輯收藏 sheet -->
+<div class="overlay" id="overlay">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2 id="sheetTitle">新增收藏</h2>
+      <button class="close-btn" id="closeSheet">✕</button>
+    </div>
+
+    <div class="field-group">
+      <label>由誰購買</label>
+      <div class="owner-picker" id="ownerPicker"></div>
+    </div>
+
+    <div class="field-group">
+      <label>照片</label>
+      <div class="upload-box" id="uploadBox">
+        <span class="placeholder-txt" id="uploadPlaceholder">📷 點擊或拖曳上傳照片</span>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" style="display:none;">
+      <div class="upload-hint">上傳後會蓋掉官網圖，改用你自己拍的那張。<button type="button" class="remove-photo-link" id="removePhotoBtn" style="display:none;">移除照片，改用官網圖</button></div>
+    </div>
+
+    <div class="mode-toggle">
+      <button id="modeDb" class="active">從官網商品庫選擇</button>
+      <button id="modeManual">找不到？手動輸入</button>
+    </div>
+
+    <div id="dbMode">
+      <div class="field-group">
+        <label>系列</label>
+        <select class="input" id="dbSeries"></select>
+      </div>
+      <select id="dbCharacter" style="display:none;"></select>
+      <div class="preview-box">
+        <div class="thumb" id="dbThumb">🎀</div>
+        <div class="info">
+          <div class="official-jpy" id="dbJpy">定價 ¥0（含稅）</div>
+          <div class="official-twd" id="dbTwd">≈ NT$0</div>
+        </div>
+      </div>
+      <a href="#" target="_blank" id="dbSiteLink" style="font-size:11.5px;color:var(--pink-deep);font-weight:600;text-decoration:none;display:inline-block;margin-bottom:12px;">↗ 查看官網商品頁</a>
+    </div>
+
+    <div id="manualMode" style="display:none;">
+      <div class="field-group">
+        <label>款式名稱</label>
+        <input class="input" id="manualName" type="text" placeholder="例如：吉伊卡哇 生日吊飾（小八貓）">
+      </div>
+      <div class="field-group">
+        <label>官網圖片網址 <span class="hint">（選填，貼上圖片連結即可自動套用；上傳照片會蓋掉這張）</span></label>
+        <input class="input" id="manualImg" type="text" placeholder="https://chiikawamarket.jp/cdn/...">
+      </div>
+      <div class="field-group">
+        <label>官網定價（日圓 JPY）</label>
+        <input class="input" id="manualJpy" type="number" min="0" placeholder="0">
+      </div>
+      <div class="field-group">
+        <label>官網商品頁網址 <span class="hint">（選填）</span></label>
+        <input class="input" id="manualUrl" type="text" placeholder="https://chiikawamarket.jp/zh-hant/...">
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>角色（可複選）</label>
+      <div class="char-pills" id="charPills"></div>
+      <div class="char-pill-hint" id="charPillHint">官網標的角色已自動帶入。標錯的話點一下取消；合體款可以多選；點選其他角色也會換成該角色的官網圖片和定價。</div>
+    </div>
+
+    <div class="field-group">
+      <label>自訂角色 <span class="hint">（選填，清單裡沒有的角色，用、分隔）</span></label>
+      <input class="input" id="customCharInput" type="text" placeholder="例如：小雞、限定聯名角色">
+    </div>
+
+    <div class="field-group">
+      <label>官網定價換算 TWD <span class="hint">（自動計算，不可直接修改）</span></label>
+      <input class="input" id="officialTwdDisplay" type="text" disabled style="color:var(--muted);font-weight:700;">
+    </div>
+
+    <div class="two-col">
+      <div class="field-group">
+        <label>實際購買金額 (TWD)</label>
+        <input class="input" id="paidInput" type="number" min="0" placeholder="0">
+      </div>
+      <div class="field-group">
+        <label>運費 (TWD) <span class="hint">選填</span></label>
+        <input class="input" id="shippingInput" type="number" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>購買日期</label>
+      <input class="input" id="dateInput" type="date">
+    </div>
+
+    <div class="toggle-row">
+      <div>
+        尾款未付
+        <div class="desc">預售/分期商品，還沒付清尾款</div>
+      </div>
+      <label class="switch"><input type="checkbox" id="unpaidToggle"><span class="track"></span><span class="knob"></span></label>
+    </div>
+
+    <div class="sold-fields" id="unpaidFields">
+      <div class="field-group">
+        <label>已付訂金 (TWD)</label>
+        <input class="input" id="depositPaidInput" type="number" min="0" placeholder="0">
+      </div>
+      <div class="field-group">
+        <label>需付尾款 (TWD)</label>
+        <input class="input" id="balanceDueInput" type="number" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <div class="toggle-row">
+      <div>
+        已賣出
+        <div class="desc">這款已經轉賣給別人了</div>
+      </div>
+      <label class="switch"><input type="checkbox" id="soldToggle"><span class="track"></span><span class="knob"></span></label>
+    </div>
+
+    <div class="sold-fields" id="soldFields">
+      <div class="field-group">
+        <label>賣出日期</label>
+        <input class="input" id="soldDateInput" type="date">
+      </div>
+      <div class="field-group">
+        <label>回收金額 (TWD)</label>
+        <input class="input" id="resaleInput" type="number" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <div class="warn-box" id="warnBox">
+      ⚠️ 這個金額和官網定價換算後差異較大，建議確認一下是不是官網直接購入的價格（例如代購/手續費/多買一起結帳都可能造成差異）。
+      <label><input type="checkbox" id="warnConfirm"> 我確認金額無誤，不是輸入錯誤</label>
+    </div>
+
+    <div class="budget-warn-box" id="budgetWarnBox"></div>
+
+    <div class="field-group">
+      <label>備註 <span class="hint">（選填，例如代購管道）</span></label>
+      <input class="input" id="noteInput" type="text" placeholder="例如：日本代購">
+    </div>
+
+    <button class="save-btn" id="saveBtn">儲存收藏</button>
+    <button class="delete-link" id="deleteBtn" style="display:none;">刪除這筆收藏</button>
+  </div>
+</div>
+
+<!-- 設定 sheet -->
+<div class="overlay" id="settingsOverlay">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>設定</h2>
+      <button class="close-btn" id="closeSettings">✕</button>
+    </div>
+
+    <div class="settings-block">
+      <div class="sb-title">💱 匯率</div>
+      <div class="field-group" style="margin-bottom:0;">
+        <label>¥1 = 多少 TWD</label>
+        <input class="input" id="rateInput" type="number" step="0.001" min="0.01">
+      </div>
+    </div>
+
+    <div class="settings-block">
+      <div class="sb-title">🔗 官網</div>
+      <a href="https://chiikawamarket.jp/zh-hant/collections/mascot" target="_blank" rel="noopener" style="display:block;text-align:center;background:var(--pink);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:11px 0;border-radius:12px;">↗ 前往吉伊卡哇市場官網瀏覽款式</a>
+    </div>
+
+    <div class="settings-block">
+      <div class="sb-title"><span class="who-dot m1"></span>成員一</div>
+      <div class="field-group">
+        <label>名稱</label>
+        <input class="input" id="member1Name" type="text" placeholder="例如：我">
+      </div>
+      <div class="field-group">
+        <label>每月預算 (TWD) <span class="hint">（0 表示不設定）</span></label>
+        <input class="input" id="member1Budget" type="number" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <div class="settings-block">
+      <div class="sb-title"><span class="who-dot m2"></span>成員二</div>
+      <div class="field-group">
+        <label>名稱</label>
+        <input class="input" id="member2Name" type="text" placeholder="例如：朋友">
+      </div>
+      <div class="field-group">
+        <label>每月預算 (TWD) <span class="hint">（0 表示不設定）</span></label>
+        <input class="input" id="member2Budget" type="number" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <button class="save-btn" id="saveSettingsBtn">儲存設定</button>
+  </div>
+</div>
+
+<script>
+// ---------- 商品資料庫（吉伊卡哇市場官方吊飾，節錄常見款式）----------
+const PRODUCT_DB = [
+{id:'4571609398752',name:'吉伊卡哇樂園 迷你吊飾鑰匙圈（拉麵鎧甲先生）',character:'盔甲',series:'吉伊卡哇樂園：迷你吊飾鑰匙圈',jpy:1430,img:'https://chiikawamarket.jp/cdn/shop/files/4571609398752_1.jpg?v=1788138413&width=533'},
+{id:'4571609398745',name:'吉伊卡哇樂園 迷你吊飾鑰匙圈（斜挎包鎧甲先生）',character:'盔甲',series:'吉伊卡哇樂園：迷你吊飾鑰匙圈',jpy:1430,img:'https://chiikawamarket.jp/cdn/shop/files/4571609398745_1.jpg?v=1788138447&width=533'},
+{id:'4571609398738',name:'吉伊卡哇樂園 迷你吊飾鑰匙圈（哥布林）',character:'其他',series:'吉伊卡哇樂園：迷你吊飾鑰匙圈',jpy:1430,img:'https://chiikawamarket.jp/cdn/shop/files/4571609398738_1.jpg?v=1788138479&width=533'},
+{id:'4571609398721',name:'吉伊卡哇樂園 迷你吊飾鑰匙圈（偶）',character:'其他',series:'吉伊卡哇樂園：迷你吊飾鑰匙圈',jpy:1430,img:'https://chiikawamarket.jp/cdn/shop/files/4571609398721_1.jpg?v=1788138512&width=533'},
+{id:'4571609398714',name:'吉伊卡哇樂園 迷你吊飾鑰匙圈（好像有點像／兔兔）',character:'兔兔',series:'吉伊卡哇樂園：迷你吊飾鑰匙圈',jpy:1430,img:'https://chiikawamarket.jp/cdn/shop/files/4571609398714_1.jpg?v=1788138544&width=533'},
+{id:'4571609398707',name:'吉伊卡哇樂園 迷你吊飾鑰匙圈（好像有點像／小八貓）',character:'小八',series:'吉伊卡哇樂園：迷你吊飾鑰匙圈',jpy:1430,img:'https://chiikawamarket.jp/cdn/shop/files/4571609398707_1.jpg?v=1788138579&width=533'},
+{id:'4571609398691',name:'吉伊卡哇樂園 迷你吊飾鑰匙圈（好像有點像／吉伊卡哇）',character:'吉伊',series:'吉伊卡哇樂園：迷你吊飾鑰匙圈',jpy:1430,img:'https://chiikawamarket.jp/cdn/shop/files/4571609398691_1.jpg?v=1788138613&width=533'},
+{id:'4571609403838',name:'x Suppaiman 毛絨吊飾（兔兔）',character:'兔兔',series:'x Suppaiman 毛絨吊飾',jpy:2200,img:'https://chiikawamarket.jp/cdn/shop/files/4571609403838_1_62187a28-6638-456f-9fdc-3c633fa8f6ce.jpg?v=1784709716&width=533'},
+{id:'4571609403821',name:'x Suppaiman 毛絨吊飾（小八貓）',character:'小八',series:'x Suppaiman 毛絨吊飾',jpy:2200,img:'https://chiikawamarket.jp/cdn/shop/files/4571609403821_1_e17f4f16-03cb-476b-84e2-0db839547d9f.jpg?v=1784709696&width=533'},
+{id:'4571609403814',name:'x Suppaiman 毛絨吊飾（吉伊卡哇）',character:'吉伊',series:'x Suppaiman 毛絨吊飾',jpy:2200,img:'https://chiikawamarket.jp/cdn/shop/files/4571609403814_1_25c0f1c7-0c13-4fd3-8c10-2ea0dd9e2a00.jpg?v=1784709677&width=533'},
+{id:'4571609403227',name:'毛絨吊飾（甲蟲）',character:'甲蟲',series:'基本款毛絨吊飾',jpy:1320,img:'https://chiikawamarket.jp/cdn/shop/files/4571609403227_1.jpg?v=1784178711&width=533'},
+{id:'4571609397465',name:'吉伊卡哇麵包店 店員造型毛絨吊飾（古本屋）',character:'古本',series:'吉伊卡哇麵包店：店員造型',jpy:2200,img:'https://chiikawamarket.jp/cdn/shop/files/4571609397465_1_445d157c-80b4-4f21-83a6-07e4f4490d37.jpg?v=1782103201&width=533'},
+{id:'4571609397458',name:'吉伊卡哇麵包店 店員造型毛絨吊飾（小桃鼠）',character:'小桃',series:'吉伊卡哇麵包店：店員造型',jpy:2200,img:'https://chiikawamarket.jp/cdn/shop/files/4571609397458_1_1cffc170-4e61-4148-80d6-467bcad60bb4.jpg?v=1782103177&width=533'},
+{id:'4571609397311',name:'宿醉毛絨吊飾（兔兔）',character:'兔兔',series:'宿醉毛絨吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609397311_1.jpg?v=1781595571&width=533'},
+{id:'4571609397304',name:'宿醉毛絨吊飾（小八貓）',character:'小八',series:'宿醉毛絨吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609397304_1.jpg?v=1781595557&width=533'},
+{id:'4571609397298',name:'宿醉毛絨吊飾（吉伊卡哇）',character:'吉伊',series:'宿醉毛絨吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609397298_1.jpg?v=1781595541&width=533'},
+{id:'4571609397281',name:'有點醉了呢毛絨吊飾（兔兔）',character:'兔兔',series:'有點醉了呢毛絨吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609397281_1.jpg?v=1781595759&width=533'},
+{id:'4571609397274',name:'有點醉了呢毛絨吊飾（小八貓）',character:'小八',series:'有點醉了呢毛絨吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609397274_1.jpg?v=1781595740&width=533'},
+{id:'4571609397267',name:'有點醉了呢毛絨吊飾（吉伊卡哇）',character:'吉伊',series:'有點醉了呢毛絨吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609397267_1.jpg?v=1781595717&width=533'},
+{id:'4571609399315',name:'電影《吉伊卡哇》毛絨吊飾（古本屋）',character:'古本',series:'電影《吉伊卡哇》毛絨吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609399315_1_pre.jpg?v=1787896346&width=533'},
+{id:'4571609399308',name:'電影《吉伊卡哇》毛絨吊飾（海獺）',character:'師傅',series:'電影《吉伊卡哇》毛絨吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609399308_1_pre.jpg?v=1787896391&width=533'},
+{id:'4571609399292',name:'電影《吉伊卡哇》毛絨吊飾（風獅爺）',character:'獅薩',series:'電影《吉伊卡哇》毛絨吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609399292_1_pre.jpg?v=1787896431&width=533'},
+{id:'4571609399285',name:'電影《吉伊卡哇》毛絨吊飾（栗子饅頭）',character:'栗子',series:'電影《吉伊卡哇》毛絨吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609399285_1_pre.jpg?v=1787896473&width=533'},
+{id:'4571609399278',name:'電影《吉伊卡哇》毛絨吊飾（小桃鼠）',character:'小桃',series:'電影《吉伊卡哇》毛絨吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609399278_1_pre.jpg?v=1787896516&width=533'},
+{id:'4571609399261',name:'電影《吉伊卡哇》毛絨吊飾（兔兔）',character:'兔兔',series:'電影《吉伊卡哇》毛絨吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609399261_1_pre.jpg?v=1787896561&width=533'},
+{id:'4571609399254',name:'電影《吉伊卡哇》毛絨吊飾（小八貓）',character:'小八',series:'電影《吉伊卡哇》毛絨吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609399254_1_pre.jpg?v=1787896603&width=533'},
+{id:'4571609399247',name:'電影《吉伊卡哇》毛絨吊飾（吉伊卡哇）',character:'吉伊',series:'電影《吉伊卡哇》毛絨吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609399247_1_pre.jpg?v=1787896650&width=533'},
+{id:'4571609402770',name:'大家一起變裝吊飾（蝙蝠古本屋）',character:'古本',series:'大家一起變裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/image_yoyaku_8.jpg?v=1778475759&width=533'},
+{id:'4571609402763',name:'大家一起變裝吊飾（草莓大福海獺）',character:'師傅',series:'大家一起變裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/image_yoyaku_7.jpg?v=1778475733&width=533'},
+{id:'4571609402756',name:'大家一起變裝吊飾（巴風特風獅爺）',character:'獅薩',series:'大家一起變裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/image_yoyaku_5_aa148e41-0bd5-405f-abfb-4cb02fa578a3.jpg?v=1778475705&width=533'},
+{id:'4571609402749',name:'大家一起變裝吊飾（毛豆栗子饅頭）',character:'栗子',series:'大家一起變裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/image_yoyaku_6.jpg?v=1778475678&width=533'},
+{id:'4571609402732',name:'大家一起變裝吊飾（蝙蝠小桃鼠）',character:'小桃',series:'大家一起變裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/image_yoyaku_4.jpg?v=1778475380&width=533'},
+{id:'4571609402725',name:'大家一起變裝吊飾（醫生兔兔）',character:'兔兔',series:'大家一起變裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/image_yoyaku_3.jpg?v=1778475348&width=533'},
+{id:'4571609402718',name:'大家一起變裝吊飾（護士小八貓）',character:'小八',series:'大家一起變裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/image_yoyaku_2.jpg?v=1778475309&width=533'},
+{id:'4571609402701',name:'大家一起變裝吊飾（護士吉伊卡哇）',character:'吉伊',series:'大家一起變裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/image_yoyaku_1.jpg?v=1778475258&width=533'},
+{id:'4571609392019',name:'魔法吉伊卡哇 魔法充能吊飾（小背包鎧甲先生）',character:'盔甲',series:'魔法充能吊飾',jpy:2310,img:'https://chiikawamarket.jp/cdn/shop/files/4571609392019_1.jpg?v=1777373418&width=533'},
+{id:'4571609392002',name:'魔法吉伊卡哇 魔法充能吊飾（危機中的吉伊卡哇）',character:'吉伊',series:'魔法充能吊飾',jpy:2090,img:'https://chiikawamarket.jp/cdn/shop/files/4571609392002_1.jpg?v=1777373443&width=533'},
+{id:'4571609390039',name:'Chiikawa Baby Kiramekko（古本屋）',character:'古本',series:'Chiikawa Baby Kiramekko',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609390039_1.jpg?v=1776859791&width=533'},
+{id:'4571609390022',name:'Chiikawa Baby Kiramekko（風獅爺）',character:'獅薩',series:'Chiikawa Baby Kiramekko',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609390022_1.jpg?v=1776859753&width=533'},
+{id:'4571609390015',name:'Chiikawa Baby Kiramekko（海獺）',character:'師傅',series:'Chiikawa Baby Kiramekko',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609390015_1.jpg?v=1776859712&width=533'},
+{id:'4571609390008',name:'Chiikawa Baby Kiramekko（栗子饅頭）',character:'栗子',series:'Chiikawa Baby Kiramekko',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609390008_1.jpg?v=1776858054&width=533'},
+{id:'4571609389996',name:'Chiikawa Baby Kiramekko（小桃鼠）',character:'小桃',series:'Chiikawa Baby Kiramekko',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609389996_1.jpg?v=1776858022&width=533'},
+{id:'4571609389989',name:'Chiikawa Baby Kiramekko（兔兔）',character:'兔兔',series:'Chiikawa Baby Kiramekko',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609389989_1.jpg?v=1776857991&width=533'},
+{id:'4571609389972',name:'Chiikawa Baby Kiramekko（小八貓）',character:'小八',series:'Chiikawa Baby Kiramekko',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609389972_1.jpg?v=1776857953&width=533'},
+{id:'4571609389965',name:'Chiikawa Baby Kiramekko（吉伊卡哇）',character:'吉伊',series:'Chiikawa Baby Kiramekko',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609389965_1.jpg?v=1776857919&width=533'},
+{id:'4571609391999',name:'Pu-Wappa 王子裝吊飾（兔兔）',character:'兔兔',series:'Pu-Wappa 王子・公主裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4571609391999_1.jpg?v=1775029189&width=533'},
+{id:'4571609391982',name:'Pu-Wappa 公主裝吊飾（小八貓）',character:'小八',series:'Pu-Wappa 王子・公主裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4571609391982_1.jpg?v=1775029160&width=533'},
+{id:'4571609391975',name:'Pu-Wappa 公主裝吊飾（吉伊卡哇）',character:'吉伊',series:'Pu-Wappa 王子・公主裝吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4571609391975_1.jpg?v=1775029124&width=533'},
+{id:'4571609351641',name:'吉伊卡哇樂園 吊飾（河豚）',character:'其他',series:'吉伊卡哇樂園：其他吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4571609351641_1.jpg?v=1774854238&width=533'},
+{id:'4571609359227',name:'吉伊卡哇樂園 鬆軟圓滾吊飾（古本屋）',character:'古本',series:'吉伊卡哇樂園：鬆軟圓滾吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609359227_1.jpg?v=1774939224&width=533'},
+{id:'4571609359210',name:'吉伊卡哇樂園 鬆軟圓滾吊飾（海獺）',character:'師傅',series:'吉伊卡哇樂園：鬆軟圓滾吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609359210_1.jpg?v=1774939217&width=533'},
+{id:'4571609359203',name:'吉伊卡哇樂園 鬆軟圓滾吊飾（風獅爺）',character:'獅薩',series:'吉伊卡哇樂園：鬆軟圓滾吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609359203_1.jpg?v=1774939210&width=533'},
+{id:'4571609359197',name:'吉伊卡哇樂園 鬆軟圓滾吊飾（栗子饅頭）',character:'栗子',series:'吉伊卡哇樂園：鬆軟圓滾吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609359197_1.jpg?v=1774939205&width=533'},
+{id:'4571609359180',name:'吉伊卡哇樂園 鬆軟圓滾吊飾（小桃鼠）',character:'小桃',series:'吉伊卡哇樂園：鬆軟圓滾吊飾',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/files/4571609359180_1.jpg?v=1774939193&width=533'},
+{id:'4571609335122',name:'吉伊卡哇麵包店 三明治吊飾（小八貓）',character:'小八',series:'吉伊卡哇麵包店：三明治吊飾',jpy:2200,img:'https://chiikawamarket.jp/cdn/shop/files/4571609335122_1.jpg?v=1749526419&width=533'},
+{id:'4571609335115',name:'吉伊卡哇麵包店 三明治吊飾（吉伊卡哇）',character:'吉伊',series:'吉伊卡哇麵包店：三明治吊飾',jpy:2200,img:'https://chiikawamarket.jp/cdn/shop/files/4571609335115_1.jpg?v=1749526402&width=533'},
+{id:'4571609356639',name:'魔法吉伊卡哇 黑魔法吊飾（小桃鼠）',character:'小桃',series:'黑魔法吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609356639_1.jpg?v=1747737404&width=533'},
+{id:'4571609363873',name:'嗚啦呀哈 兔兔晴天娃娃 吊飾',character:'兔兔',series:'嗚啦呀哈 晴天娃娃吊飾',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4571609363873_1.jpg?v=1747737493&width=533'},
+{id:'4571609359586',name:'鯉魚旗吊飾（兔兔）',character:'兔兔',series:'鯉魚旗吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609359586_1.jpg?v=1745308429&width=533'},
+{id:'4571609359579',name:'鯉魚旗吊飾（小八貓）',character:'小八',series:'鯉魚旗吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609359579_1.jpg?v=1745308407&width=533'},
+{id:'4571609359562',name:'鯉魚旗吊飾（吉伊卡哇）',character:'吉伊',series:'鯉魚旗吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609359562_1.jpg?v=1745308384&width=533'},
+{id:'4571609355854',name:'點燃愛心吊飾（兔兔）',character:'兔兔',series:'點燃愛心吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609355854_1.jpg?v=1745308637&width=533'},
+{id:'4571609355847',name:'奶油生日吊飾（小八貓）',character:'小八',series:'奶油生日吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609355847_1.jpg?v=1745308614&width=533'},
+{id:'4571609355830',name:'奶油生日吊飾（吉伊卡哇）',character:'吉伊',series:'奶油生日吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609355830_1.jpg?v=1745308592&width=533'},
+{id:'4571609337072',name:'魔法吉伊卡哇 迷你吊飾（古本屋）',character:'古本',series:'魔法吉伊卡哇 迷你吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609337072_1.jpg?v=1742300031&width=533'},
+{id:'4571609337065',name:'魔法吉伊卡哇 迷你吊飾（海獺）',character:'師傅',series:'魔法吉伊卡哇 迷你吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609337065_1.jpg?v=1742300011&width=533'},
+{id:'4571609337058',name:'魔法吉伊卡哇 迷你吊飾（獅薩）',character:'獅薩',series:'魔法吉伊卡哇 迷你吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609337058_1.jpg?v=1742299981&width=533'},
+{id:'4571609337041',name:'魔法吉伊卡哇 迷你吊飾（栗子饅頭）',character:'栗子',series:'魔法吉伊卡哇 迷你吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609337041_1.jpg?v=1742299954&width=533'},
+{id:'4571609337034',name:'魔法吉伊卡哇 迷你吊飾（小桃鼠）',character:'小桃',series:'魔法吉伊卡哇 迷你吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609337034_1.jpg?v=1742299931&width=533'},
+{id:'4571609337027',name:'魔法吉伊卡哇 迷你吊飾（兔兔）',character:'兔兔',series:'魔法吉伊卡哇 迷你吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609337027_1.jpg?v=1742299898&width=533'},
+{id:'4582662975125',name:'吉伊卡哇 阪急電車系列 吊飾（八割）',character:'小八',series:'Hankyu火車吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4582662975125_01.jpg?v=1690967452&width=533'},
+{id:'4582662975118',name:'吉伊卡哇 阪急電車系列 吊飾（兔子）',character:'兔兔',series:'Hankyu火車吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4582662975118_01.jpg?v=1690967468&width=533'},
+{id:'4582662975132',name:'吉伊卡哇 阪急電車系列 吊飾（吉伊卡哇）',character:'吉伊',series:'Hankyu火車吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4582662975132_01.jpg?v=1690967437&width=533'},
+{id:'4582662975101',name:'吉伊卡哇 阪急電車系列 吊飾（莫莫加）',character:'小桃',series:'Hankyu火車吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4582662975101_01.jpg?v=1690967494&width=533'},
+{id:'4582662975095',name:'吉伊卡哇 阪急電車系列 吊飾（栗子饅頭）',character:'栗子',series:'Hankyu火車吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4582662975095_01.jpg?v=1690967512&width=533'},
+{id:'4582662975088',name:'吉伊卡哇 阪急電車系列 吊飾（獅薩）',character:'獅薩',series:'Hankyu火車吊飾',jpy:1980,img:'https://chiikawamarket.jp/cdn/shop/files/4582662975088_01.jpg?v=1690967542&width=533'},
+{id:'4571609346142',name:'吉伊卡哇 毛茸茸的睡衣吊飾（吉伊卡哇）',character:'吉伊',series:'Hossa Fussa睡衣吊飾',jpy:1760,img:'https://chiikawamarket.jp/cdn/shop/files/4571609346142_1.jpg?v=1733223824&width=533'},
+{id:'4571609346159',name:'吉伊卡哇 毛茸茸的睡衣吊飾（八割）',character:'小八',series:'Hossa Fussa睡衣吊飾',jpy:1760,img:'https://chiikawamarket.jp/cdn/shop/files/4571609346159_1.jpg?v=1733223849&width=533'},
+{id:'4571609346166',name:'吉伊卡哇 毛茸茸的睡衣吊飾（兔子）',character:'兔兔',series:'Hossa Fussa睡衣吊飾',jpy:1760,img:'https://chiikawamarket.jp/cdn/shop/files/4571609346166_1.jpg?v=1733223871&width=533'},
+{id:'4582662946873',name:'吉伊卡哇麵包店 QQ麵包造型吊飾（吉伊卡哇）',character:'吉伊',series:'吉伊卡哇蛋糕',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4582662946873_1.jpg?v=1729660887&width=533'},
+{id:'4582662946880',name:'吉伊卡哇麵包店 QQ麵包造型吊飾（小八貓）',character:'小八',series:'吉伊卡哇蛋糕',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4582662946880_1.jpg?v=1729660956&width=533'},
+{id:'4582662946897',name:'吉伊卡哇麵包店 QQ麵包造型吊飾（兔兔）',character:'兔兔',series:'吉伊卡哇蛋糕',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4582662946897_1.jpg?v=1729660831&width=533'},
+{id:'4582662946903',name:'吉伊卡哇麵包店 QQ麵包造型吊飾（小桃鼠）',character:'小桃',series:'吉伊卡哇蛋糕',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4582662946903_1.jpg?v=1729660980&width=533'},
+{id:'4582662946910',name:'吉伊卡哇麵包店 QQ麵包造型吊飾（栗子饅頭）',character:'栗子',series:'吉伊卡哇蛋糕',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4582662946910_1.jpg?v=1729660860&width=533'},
+{id:'4582662946927',name:'吉伊卡哇麵包店 QQ麵包造型吊飾（獅薩）',character:'獅薩',series:'吉伊卡哇蛋糕',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4582662946927_1.jpg?v=1729660935&width=533'},
+{id:'4582662946934',name:'吉伊卡哇麵包店 QQ麵包造型吊飾（海獺師傅）',character:'師傅',series:'吉伊卡哇蛋糕',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4582662946934_1.jpg?v=1729661034&width=533'},
+{id:'4582662946941',name:'吉伊卡哇麵包店 QQ麵包造型吊飾（古本屋）',character:'古本',series:'吉伊卡哇蛋糕',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4582662946941_1.jpg?v=1729661059&width=533'},
+{id:'4582662950894',name:'吉伊卡哇麵包店 QQ麵包造型吊飾（甲蟲）',character:'甲蟲',series:'吉伊卡哇蛋糕',jpy:1540,img:'https://chiikawamarket.jp/cdn/shop/files/4582662950894_1.jpg?v=1729660910&width=533'},
+{id:'4571609342427',name:'吉伊卡哇壽司吊飾（吉伊卡哇／中鮪魚）',character:'吉伊',series:'吉伊卡哇壽司',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609342427_1.jpg?v=1725344396&width=533'},
+{id:'4571609342434',name:'吉伊卡哇壽司吊飾（小八貓／玉子）',character:'小八',series:'吉伊卡哇壽司',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609342434_1.jpg?v=1725344461&width=533'},
+{id:'4571609342441',name:'吉伊卡哇壽司吊飾（兔兔／鮭魚卵）',character:'兔兔',series:'吉伊卡哇壽司',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609342441_1.jpg?v=1725344299&width=533'},
+{id:'4571609342458',name:'吉伊卡哇壽司吊飾（小桃鼠／蔥鮪魚）',character:'小桃',series:'吉伊卡哇壽司',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609342458_1.jpg?v=1725344491&width=533'},
+{id:'4571609342465',name:'吉伊卡哇壽司吊飾（栗子饅頭／豆皮壽司）',character:'栗子',series:'吉伊卡哇壽司',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609342465_1.jpg?v=1725344361&width=533'},
+{id:'4571609342472',name:'吉伊卡哇壽司吊飾（獅薩／蝦）',character:'獅薩',series:'吉伊卡哇壽司',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609342472_1.jpg?v=1725344429&width=533'},
+{id:'4571609342489',name:'吉伊卡哇壽司吊飾（海獺師傅／海膽）',character:'師傅',series:'吉伊卡哇壽司',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609342489_1.jpg?v=1725344521&width=533'},
+{id:'4571609342496',name:'吉伊卡哇壽司吊飾（古本屋／蟹肉棒）',character:'古本',series:'吉伊卡哇壽司',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609342496_1.jpg?v=1725344548&width=533'},
+{id:'4571609342502',name:'吉伊卡哇壽司吊飾（兔兔／茶色）',character:'兔兔',series:'吉伊卡哇壽司',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609342502_1.jpg?v=1725344331&width=533'},
+{id:'4582662929173',name:'吉伊卡哇水族館 海獺造型吊飾（吉伊卡哇）',character:'吉伊',series:'吉伊卡哇水族館',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/products/4582662929173_1.jpg?v=1681373997&width=533'},
+{id:'4582662929180',name:'吉伊卡哇水族館 海獺造型吊飾（小八貓）',character:'小八',series:'吉伊卡哇水族館',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/products/4582662929180_1.jpg?v=1681374014&width=533'},
+{id:'4582662929197',name:'吉伊卡哇水族館 海豚造型吊飾（兔兔）',character:'兔兔',series:'吉伊卡哇水族館',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/products/4582662929197_1.jpg?v=1681374028&width=533'},
+{id:'4582662929203',name:'吉伊卡哇水族館 洪堡德企鵝造型吊飾（栗子饅頭）',character:'栗子',series:'吉伊卡哇水族館',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/products/4582662929203_1.jpg?v=1681374046&width=533'},
+{id:'4582662929210',name:'吉伊卡哇水族館 海天使造型吊飾（小桃鼠）',character:'小桃',series:'吉伊卡哇水族館',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/products/4582662929210_1.jpg?v=1681374064&width=533'},
+{id:'4582662929227',name:'吉伊卡哇水族館 魷魚造型吊飾（吉伊卡哇）',character:'吉伊',series:'吉伊卡哇水族館',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/products/4582662929227_1.jpg?v=1681374081&width=533'},
+{id:'4582662929234',name:'吉伊卡哇水族館 魷魚造型吊飾（小八貓）',character:'小八',series:'吉伊卡哇水族館',jpy:1650,img:'https://chiikawamarket.jp/cdn/shop/products/4582662929234_1.jpg?v=1681374100&width=533'},
+{id:'4582662970496',name:'超魔法吉伊卡哇 強化吊飾（吉伊卡哇）',character:'吉伊',series:'超魔法吉伊卡哇強化吊飾',jpy:1760,img:'https://chiikawamarket.jp/cdn/shop/files/4582662970496_1.jpg?v=1693909599&width=533'},
+{id:'4582662970489',name:'超魔法吉伊卡哇 強化吊飾（小八貓）',character:'小八',series:'超魔法吉伊卡哇強化吊飾',jpy:1760,img:'https://chiikawamarket.jp/cdn/shop/files/4582662970489_1.jpg?v=1693909621&width=533'},
+{id:'4582662970472',name:'超魔法吉伊卡哇 強化吊飾（兔兔）',character:'兔兔',series:'超魔法吉伊卡哇強化吊飾',jpy:1760,img:'https://chiikawamarket.jp/cdn/shop/files/4582662970472_1.jpg?v=1693909644&width=533'},
+{id:'4582662970465',name:'超魔法吉伊卡哇 強化吊飾（小桃鼠）',character:'小桃',series:'超魔法吉伊卡哇強化吊飾',jpy:1760,img:'https://chiikawamarket.jp/cdn/shop/files/4582662970465_1.jpg?v=1693909659&width=533'},
+{id:'4582662970458',name:'超魔法吉伊卡哇 強化吊飾（栗子饅頭）',character:'栗子',series:'超魔法吉伊卡哇強化吊飾',jpy:1760,img:'https://chiikawamarket.jp/cdn/shop/files/4582662970458_1.jpg?v=1693909675&width=533'},
+{id:'4582662970441',name:'超魔法吉伊卡哇 強化吊飾（獅薩）',character:'獅薩',series:'超魔法吉伊卡哇強化吊飾',jpy:1760,img:'https://chiikawamarket.jp/cdn/shop/files/4582662970441_1.jpg?v=1693909690&width=533'},
+{id:'4571609364702',name:'星星的願望是⋯吊飾（吉伊卡哇）',character:'吉伊',series:'星星的願望是⋯吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609364702_1.jpg?v=1750074551&width=533'},
+{id:'4571609364719',name:'星星的願望是⋯吊飾（小八貓）',character:'小八',series:'星星的願望是⋯吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609364719_1.jpg?v=1750074566&width=533'},
+{id:'4571609364726',name:'星星的願望是⋯吊飾（兔兔）',character:'兔兔',series:'星星的願望是⋯吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609364726_1.jpg?v=1750074581&width=533'},
+{id:'4571609364733',name:'星星的願望是⋯吊飾（小桃鼠）',character:'小桃',series:'星星的願望是⋯吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609364733_1.jpg?v=1750074596&width=533'},
+{id:'4571609364740',name:'星星的願望是⋯吊飾（栗子饅頭）',character:'栗子',series:'星星的願望是⋯吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609364740_1.jpg?v=1750074610&width=533'},
+{id:'4571609364757',name:'星星的願望是⋯吊飾（獅薩）',character:'獅薩',series:'星星的願望是⋯吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609364757_1.jpg?v=1750074625&width=533'},
+{id:'4571609364764',name:'星星的願望是⋯吊飾（海獺師傅）',character:'師傅',series:'星星的願望是⋯吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609364764_1.jpg?v=1750074641&width=533'},
+{id:'4571609364771',name:'星星的願望是⋯吊飾（古本屋）',character:'古本',series:'星星的願望是⋯吊飾',jpy:1870,img:'https://chiikawamarket.jp/cdn/shop/files/4571609364771_1.jpg?v=1750074655&width=533'}
+];
+const SITE_URL_BASE = 'https://chiikawamarket.jp/zh-hant/collections/mascot/products/';
+const CHARACTERS = ['吉伊','小八','兔兔','小桃','栗子','師傅','獅薩','古本','盔甲','甲蟲','其他'];
+const SERIES = [...new Set(PRODUCT_DB.map(p=>p.series))];
+
+// ---------- state ----------
+let records = [];
+let rate = 0.21;
+let settings = { member1Name:'我', member2Name:'朋友', member1Budget:0, member2Budget:0 };
+let editingId = null;
+let mode = 'db'; // db | manual
+let currentFilter = '全部';
+let memberFilter = 'all'; // all | member1 | member2
+let selectedOwner = 'member1';
+let mainTab = 'gallery'; // gallery | detail
+let statusFilter = 'active'; // active | sold
+let selectedChars = []; // 目前表單中已選的角色
+let pendingCustomImg = null; // 上傳照片的 dataURL（null 表示未變更；'' 表示使用者主動移除）
+
+const $ = (id)=>document.getElementById(id);
+const fmtInt = (n)=> Math.round(n).toLocaleString('zh-Hant-TW');
+
+function ownerName(key){
+  if(key==='member1') return settings.member1Name || '成員一';
+  if(key==='member2') return settings.member2Name || '成員二';
+  return key;
+}
+
+function populateStaticSelects(){
+  $('dbSeries').innerHTML = SERIES.map(s=>`<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
+  $('charPills').innerHTML = CHARACTERS.map(c=>`<button type="button" class="char-pill" data-c="${c}">${c}</button>`).join('');
+  $('charPills').querySelectorAll('.char-pill').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const c = btn.dataset.c;
+      const idx = selectedChars.indexOf(c);
+      if(idx>-1) selectedChars.splice(idx,1); else selectedChars.push(c);
+      renderCharPills();
+      if(mode==='db'){
+        const opts = [...$('dbCharacter').options].map(o=>o.value);
+        if(opts.includes(c)){ $('dbCharacter').value = c; updateDbPreview(); }
+      }
+    });
+  });
+}
+
+function renderCharPills(){
+  $('charPills').querySelectorAll('.char-pill').forEach(btn=>{
+    btn.classList.toggle('active', selectedChars.includes(btn.dataset.c));
+  });
+}
+
+function populateCharacterForSeries(){
+  const series = $('dbSeries').value;
+  const list = PRODUCT_DB.filter(p=>p.series===series);
+  const chars = CHARACTERS.filter(c=>list.some(p=>p.character===c));
+  $('dbCharacter').innerHTML = chars.map(c=>`<option value="${c}">${c}</option>`).join('');
+  // 自動把官網角色帶入複選角色（若尚未手動調整過，直接覆蓋成該角色）
+  const dbChar = $('dbCharacter').value;
+  if(dbChar) selectedChars = [dbChar];
+  renderCharPills();
+  updateDbPreview();
+}
+
+function currentDbProduct(){
+  const series = $('dbSeries').value;
+  const ch = $('dbCharacter').value;
+  return PRODUCT_DB.find(p=>p.series===series && p.character===ch);
+}
+
+function imgFallbackStep1(el){
+  el.onerror = function(){ imgFallbackFinal(el); };
+  el.src = el.getAttribute('data-orig');
+}
+function imgFallbackFinal(el){
+  el.outerHTML = '<span>🎀</span>';
+}
+function imgTag(src){
+  if(!src) return '<span>🎀</span>';
+  if(src.indexOf('data:')===0){
+    return `<img src="${src}" alt="" loading="lazy" onerror="imgFallbackFinal(this)">`;
+  }
+  const bare = src.replace(/^https?:\/\//,'');
+  const proxied = 'https://wsrv.nl/?url=' + encodeURIComponent(bare) + '&default=' + encodeURIComponent('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7');
+  const safeSrc = src.replace(/"/g,'&quot;');
+  return `<img src="${proxied}" data-orig="${safeSrc}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="imgFallbackStep1(this)">`;
+}
+
+function updateDbPreview(){
+  const p = currentDbProduct();
+  if(!p) return;
+  $('dbThumb').innerHTML = imgTag(p.img);
+  $('dbJpy').textContent = `定價 ¥${p.jpy.toLocaleString()}（含稅）`;
+  const twd = p.jpy * rate;
+  $('dbTwd').textContent = `≈ NT$${fmtInt(twd)}`;
+  $('dbSiteLink').href = SITE_URL_BASE + p.id;
+  $('officialTwdDisplay').value = `NT$${fmtInt(twd)}`;
+  if(editingId===null){ $('paidInput').value = Math.round(twd); }
+  checkWarn();
+}
+
+function currentOfficialTwd(){
+  if(mode==='db'){
+    const p = currentDbProduct();
+    return p ? p.jpy*rate : 0;
+  }else{
+    const jpy = parseFloat($('manualJpy').value)||0;
+    return jpy*rate;
+  }
+}
+
+function monthOf(dateStr){
+  return (dateStr||'').slice(0,7);
+}
+
+function checkWarn(){
+  const official = currentOfficialTwd();
+  const paid = parseFloat($('paidInput').value)||0;
+  const warnBox = $('warnBox');
+  if(official<=0){ warnBox.classList.remove('show'); $('warnConfirm').checked=false; }
+  else{
+    const ratio = paid/official;
+    const outOfRange = paid>0 && (ratio<0.5 || ratio>2.5);
+    if(outOfRange){ warnBox.classList.add('show'); }
+    else{ warnBox.classList.remove('show'); $('warnConfirm').checked=false; }
+  }
+  checkBudgetWarn();
+  updateSaveEnabled();
+}
+
+function checkBudgetWarn(){
+  const box = $('budgetWarnBox');
+  const paid = (parseFloat($('paidInput').value)||0) + (parseFloat($('shippingInput').value)||0);
+  const date = $('dateInput').value;
+  const m = monthOf(date);
+  const budget = selectedOwner==='member1' ? settings.member1Budget : settings.member2Budget;
+  if(!budget || budget<=0 || !m){ box.classList.remove('show'); return; }
+  const existing = records
+    .filter(r=>r.owner===selectedOwner && monthOf(r.date)===m && r.id!==editingId)
+    .reduce((s,r)=>s+(r.paid||0)+(r.shipping||0),0);
+  const projected = existing + paid;
+  if(projected > budget){
+    box.classList.add('show');
+    box.textContent = `⚠️ 加上這筆之後，${ownerName(selectedOwner)} 在 ${m} 的花費會是 NT$${fmtInt(projected)}，超出預算 NT$${fmtInt(budget)}（超出 NT$${fmtInt(projected-budget)}）。仍可儲存，只是提醒你注意荷包～`;
+  }else{
+    box.classList.remove('show');
+  }
+}
+
+function updateSaveEnabled(){
+  const warnShown = $('warnBox').classList.contains('show');
+  const confirmed = $('warnConfirm').checked;
+  $('saveBtn').disabled = warnShown && !confirmed;
+}
+
+function switchMode(m){
+  mode = m;
+  $('modeDb').classList.toggle('active', m==='db');
+  $('modeManual').classList.toggle('active', m==='manual');
+  $('dbMode').style.display = m==='db' ? 'block':'none';
+  $('manualMode').style.display = m==='manual' ? 'block':'none';
+  if(m==='db'){ updateDbPreview(); }
+  else{
+    const jpy = parseFloat($('manualJpy').value)||0;
+    $('officialTwdDisplay').value = `NT$${fmtInt(jpy*rate)}`;
+    checkWarn();
+  }
+}
+
+function renderOwnerPicker(){
+  $('ownerPicker').innerHTML = `
+    <button type="button" class="owner-pick-btn ${selectedOwner==='member1'?'active':''}" data-o="member1"><span class="who-dot m1"></span>${ownerName('member1')}</button>
+    <button type="button" class="owner-pick-btn ${selectedOwner==='member2'?'active':''}" data-o="member2"><span class="who-dot m2"></span>${ownerName('member2')}</button>
+  `;
+  $('ownerPicker').querySelectorAll('.owner-pick-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      selectedOwner = btn.dataset.o;
+      renderOwnerPicker();
+      checkBudgetWarn();
+    });
+  });
+}
+
+function resetUploadBox(){
+  pendingCustomImg = null;
+  $('uploadBox').innerHTML = '<span class="placeholder-txt" id="uploadPlaceholder">📷 點擊或拖曳上傳照片</span>';
+  $('removePhotoBtn').style.display = 'none';
+  $('fileInput').value = '';
+}
+
+function showUploadPreview(dataUrl){
+  $('uploadBox').innerHTML = `<img src="${dataUrl}" alt="">`;
+  $('removePhotoBtn').style.display = 'inline';
+}
+
+function handleFile(file){
+  if(!file || !file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = (e)=>{
+    const img = new Image();
+    img.onload = ()=>{
+      const maxDim = 320;
+      let w=img.width, h=img.height;
+      if(w>h){ if(w>maxDim){ h=Math.round(h*maxDim/w); w=maxDim; } }
+      else{ if(h>maxDim){ w=Math.round(w*maxDim/h); h=maxDim; } }
+      const canvas = document.createElement('canvas');
+      canvas.width=w; canvas.height=h;
+      canvas.getContext('2d').drawImage(img,0,0,w,h);
+      pendingCustomImg = canvas.toDataURL('image/jpeg',0.65);
+      showUploadPreview(pendingCustomImg);
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function openAddSheet(){
+  editingId = null;
+  selectedOwner = 'member1';
+  $('sheetTitle').textContent = '新增收藏';
+  $('deleteBtn').style.display = 'none';
+  renderOwnerPicker();
+  resetUploadBox();
+  switchMode('db');
+  $('dbSeries').value = SERIES[0];
+  populateCharacterForSeries();
+  $('manualName').value=''; $('manualImg').value=''; $('manualJpy').value=''; $('manualUrl').value='';
+  $('customCharInput').value='';
+  $('paidInput').value='';
+  $('shippingInput').value='';
+  $('noteInput').value='';
+  $('dateInput').valueAsDate = new Date();
+  $('unpaidToggle').checked=false;
+  $('unpaidFields').classList.remove('show');
+  $('depositPaidInput').value=''; $('balanceDueInput').value='';
+  $('soldToggle').checked=false;
+  $('soldFields').classList.remove('show');
+  $('soldDateInput').value=''; $('resaleInput').value='';
+  $('warnBox').classList.remove('show');
+  $('warnConfirm').checked=false;
+  $('budgetWarnBox').classList.remove('show');
+  updateSaveEnabled();
+  $('overlay').classList.add('show');
+}
+
+function openEditSheet(rec){
+  editingId = rec.id;
+  selectedOwner = rec.owner || 'member1';
+  $('sheetTitle').textContent = '編輯收藏';
+  $('deleteBtn').style.display = 'block';
+  renderOwnerPicker();
+  resetUploadBox();
+  if(rec.customImg){ pendingCustomImg = rec.customImg; showUploadPreview(rec.customImg); }
+  const isDb = !!rec.productId && PRODUCT_DB.some(p=>p.id===rec.productId);
+  switchMode(isDb ? 'db' : 'manual');
+  if(isDb){
+    const p = PRODUCT_DB.find(x=>x.id===rec.productId);
+    $('dbSeries').value = p.series;
+    populateCharacterForSeries();
+    $('dbCharacter').value = p.character;
+    updateDbPreview();
+  }else{
+    $('manualName').value = rec.name;
+    $('manualImg').value = rec.img||'';
+    $('manualJpy').value = rec.jpy||'';
+    $('manualUrl').value = rec.url||'';
+    $('officialTwdDisplay').value = `NT$${fmtInt((rec.jpy||0)*rate)}`;
+  }
+  selectedChars = [...(rec.characters||[rec.character].filter(Boolean))];
+  const known = selectedChars.filter(c=>CHARACTERS.includes(c));
+  const custom = selectedChars.filter(c=>!CHARACTERS.includes(c));
+  selectedChars = known;
+  renderCharPills();
+  $('customCharInput').value = custom.join('、');
+  $('paidInput').value = rec.paid;
+  $('shippingInput').value = rec.shipping || '';
+  $('noteInput').value = rec.note||'';
+  $('dateInput').value = rec.date || new Date().toISOString().slice(0,10);
+  $('unpaidToggle').checked = !!rec.depositUnpaid;
+  $('unpaidFields').classList.toggle('show', !!rec.depositUnpaid);
+  $('depositPaidInput').value = rec.depositPaid || '';
+  $('balanceDueInput').value = rec.balanceDue || '';
+  $('soldToggle').checked = !!rec.sold;
+  $('soldFields').classList.toggle('show', !!rec.sold);
+  $('soldDateInput').value = rec.soldDate || '';
+  $('resaleInput').value = rec.resale || '';
+  $('warnBox').classList.remove('show');
+  $('warnConfirm').checked=false;
+  checkWarn();
+  $('overlay').classList.add('show');
+}
+
+function closeSheet(){
+  $('overlay').classList.remove('show');
+}
+
+function collectCharacters(){
+  const custom = $('customCharInput').value.split(/[、,，]/).map(s=>s.trim()).filter(Boolean);
+  const all = [...selectedChars, ...custom];
+  return all.length ? [...new Set(all)] : ['其他'];
+}
+
+async function saveRecord(){
+  const paid = parseFloat($('paidInput').value)||0;
+  const shipping = parseFloat($('shippingInput').value)||0;
+  const date = $('dateInput').value || new Date().toISOString().slice(0,10);
+  const note = $('noteInput').value.trim();
+  const owner = selectedOwner;
+  const characters = collectCharacters();
+  const depositUnpaid = $('unpaidToggle').checked;
+  const depositPaid = depositUnpaid ? (parseFloat($('depositPaidInput').value)||0) : 0;
+  const balanceDue = depositUnpaid ? (parseFloat($('balanceDueInput').value)||0) : 0;
+  const sold = $('soldToggle').checked;
+  const soldDate = sold ? ($('soldDateInput').value || date) : '';
+  const resale = sold ? (parseFloat($('resaleInput').value)||0) : 0;
+  const prevCustomImg = editingId ? (records.find(r=>r.id===editingId)?.customImg || '') : '';
+  const customImg = pendingCustomImg===null ? prevCustomImg : pendingCustomImg;
+
+  let rec;
+  if(mode==='db'){
+    const p = currentDbProduct();
+    if(!p) return;
+    rec = {
+      id: editingId || ('r_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)),
+      productId: p.id, name: p.name, character: p.character, characters,
+      img: p.img, customImg, jpy: p.jpy, url: SITE_URL_BASE+p.id,
+      paid, shipping, date, note, owner, depositUnpaid, depositPaid, balanceDue, sold, soldDate, resale,
+      addedAt: editingId ? (records.find(r=>r.id===editingId)?.addedAt||Date.now()) : Date.now()
+    };
+  }else{
+    const name = $('manualName').value.trim();
+    if(!name){ $('manualName').focus(); return; }
+    const jpy = parseFloat($('manualJpy').value)||0;
+    rec = {
+      id: editingId || ('r_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)),
+      productId: null, name, character: characters[0], characters,
+      img: $('manualImg').value.trim(), customImg, jpy, url: $('manualUrl').value.trim(),
+      paid, shipping, date, note, owner, depositUnpaid, depositPaid, balanceDue, sold, soldDate, resale,
+      addedAt: editingId ? (records.find(r=>r.id===editingId)?.addedAt||Date.now()) : Date.now()
+    };
+  }
+  if(editingId){
+    const idx = records.findIndex(r=>r.id===editingId);
+    if(idx>-1) records[idx]=rec;
+  }else{
+    records.unshift(rec);
+  }
+  await persistRecords();
+  closeSheet();
+  render();
+}
+
+async function deleteRecord(){
+  if(!editingId) return;
+  if(!confirm('確定要刪除這筆收藏嗎？（雙方都會看到已刪除）')) return;
+  records = records.filter(r=>r.id!==editingId);
+  await persistRecords();
+  closeSheet();
+  render();
+}
+
+// ---------- settings sheet ----------
+function openSettings(){
+  $('member1Name').value = settings.member1Name;
+  $('member2Name').value = settings.member2Name;
+  $('member1Budget').value = settings.member1Budget || '';
+  $('member2Budget').value = settings.member2Budget || '';
+  $('settingsOverlay').classList.add('show');
+}
+function closeSettings(){ $('settingsOverlay').classList.remove('show'); }
+
+async function saveSettings(){
+  settings = {
+    member1Name: $('member1Name').value.trim() || '成員一',
+    member2Name: $('member2Name').value.trim() || '成員二',
+    member1Budget: parseFloat($('member1Budget').value)||0,
+    member2Budget: parseFloat($('member2Budget').value)||0
+  };
+  await persistSettings();
+  closeSettings();
+  render();
+}
+
+// ---------- storage (shared between both people) ----------
+async function persistRecords(){
+  try{ await window.storage.set('chiikawa_records', JSON.stringify(records), true); }
+  catch(e){ console.error('save records failed', e); alert('儲存失敗，可能是照片太大或網路問題，請再試一次。'); }
+}
+async function persistRate(){
+  try{ await window.storage.set('chiikawa_rate', String(rate), true); }
+  catch(e){ console.error('save rate failed', e); }
+}
+async function persistSettings(){
+  try{ await window.storage.set('chiikawa_settings', JSON.stringify(settings), true); }
+  catch(e){ console.error('save settings failed', e); }
+}
+async function loadAll(){
+  try{
+    const r = await window.storage.get('chiikawa_records', true);
+    if(r && r.value) records = JSON.parse(r.value);
+  }catch(e){ records = []; }
+  try{
+    const rt = await window.storage.get('chiikawa_rate', true);
+    if(rt && rt.value) rate = parseFloat(rt.value)||0.21;
+  }catch(e){ /* keep default */ }
+  try{
+    const s = await window.storage.get('chiikawa_settings', true);
+    if(s && s.value) settings = Object.assign(settings, JSON.parse(s.value));
+  }catch(e){ /* keep default */ }
+  records.forEach(r=>{
+    if(!r.owner) r.owner='member1';
+    if(!r.characters) r.characters = r.character ? [r.character] : ['其他'];
+    if(typeof r.shipping!=='number') r.shipping = 0;
+    if(typeof r.sold!=='boolean') r.sold = false;
+    if(typeof r.depositUnpaid!=='boolean') r.depositUnpaid = false;
+    if(typeof r.depositPaid!=='number') r.depositPaid = 0;
+    if(typeof r.balanceDue!=='number') r.balanceDue = 0;
+    if(typeof r.resale!=='number') r.resale = 0;
+  });
+}
+
+// ---------- main tab switching ----------
+function switchMainTab(t){
+  mainTab = t;
+  $('tabGallery').classList.toggle('active', t==='gallery');
+  $('tabDetail').classList.toggle('active', t==='detail');
+  $('detailPane').style.display = t==='detail' ? 'block':'none';
+  $('grid').style.display = t==='detail' ? 'grid':'none';
+  $('shelfWrap').style.display = t==='gallery' ? 'block':'none';
+  $('detailControls').style.display = t==='detail' ? 'flex':'none';
+  render();
+}
+
+// ---------- render ----------
+function renderMemberRow(){
+  $('memberRow').innerHTML = `
+    <div class="member-chip ${memberFilter==='all'?'active':''}" data-m="all">全部成員</div>
+    <div class="member-chip ${memberFilter==='member1'?'active':''}" data-m="member1"><span class="who-dot m1"></span>${ownerName('member1')}</div>
+    <div class="member-chip ${memberFilter==='member2'?'active':''}" data-m="member2"><span class="who-dot m2"></span>${ownerName('member2')}</div>
+  `;
+  $('memberRow').querySelectorAll('.member-chip').forEach(el=>{
+    el.addEventListener('click', ()=>{ memberFilter = el.dataset.m; render(); });
+  });
+}
+
+function renderBudget(){
+  const m = $('budgetMonth').value || new Date().toISOString().slice(0,7);
+  const rows = [
+    {key:'member1', name:ownerName('member1'), dot:'m1', budget:settings.member1Budget},
+    {key:'member2', name:ownerName('member2'), dot:'m2', budget:settings.member2Budget}
+  ];
+  $('budgetRows').innerHTML = rows.map(row=>{
+    const spent = records.filter(r=>r.owner===row.key && monthOf(r.date)===m && !r.sold).reduce((s,r)=>s+(r.paid||0)+(r.shipping||0),0);
+    if(!row.budget || row.budget<=0){
+      return `<div class="budget-row">
+        <div class="top-line"><span class="who"><span class="who-dot ${row.dot}"></span>${row.name}</span><span class="amt">已花 ${amtFull(spent)}</span></div>
+        <div class="no-budget">尚未設定預算，點右上角 ⚙ 可設定</div>
+      </div>`;
+    }
+    const ratio = spent/row.budget;
+    const pct = Math.min(100, ratio*100);
+    const barClass = ratio>1 ? 'over' : (ratio>=0.8 ? 'warn':'ok');
+    const note = ratio>1
+      ? `已超出預算 ${amtFull(spent-row.budget)}`
+      : `還剩 ${amtFull(row.budget-spent)} 可花用`;
+    return `<div class="budget-row">
+      <div class="top-line"><span class="who"><span class="who-dot ${row.dot}"></span>${row.name}</span><span class="amt">${amtFull(spent)} / ${amtFull(row.budget)}</span></div>
+      <div class="bar-track"><div class="bar-fill ${barClass}" style="width:${pct}%;"></div></div>
+      <div class="budget-note ${ratio>1?'over':'ok'}">${note}</div>
+    </div>`;
+  }).join('');
+}
+
+function allMonthsRange(){
+  if(records.length===0) return [];
+  const nowMonth = new Date().toISOString().slice(0,7);
+  let earliest = records.reduce((m,r)=>{
+    const mo = monthOf(r.date);
+    return (mo && (!m || mo<m)) ? mo : m;
+  }, null);
+  if(!earliest) return [];
+  const months = [];
+  let [y,mo] = earliest.split('-').map(Number);
+  while(true){
+    const cur = `${y}-${String(mo).padStart(2,'0')}`;
+    if(cur >= nowMonth) break;
+    months.push(cur);
+    mo++;
+    if(mo>12){ mo=1; y++; }
+  }
+  return months;
+}
+
+function computeSavings(ownerKey){
+  const budget = ownerKey==='member1' ? settings.member1Budget : settings.member2Budget;
+  if(!budget || budget<=0) return 0;
+  const months = allMonthsRange();
+  let total = 0;
+  months.forEach(m=>{
+    const spent = records.filter(r=>r.owner===ownerKey && monthOf(r.date)===m && !r.sold).reduce((s,r)=>s+(r.paid||0)+(r.shipping||0),0);
+    const leftover = budget - spent; // 沒超支是正的存進來，超支是負的會扣掉
+    total += leftover;
+  });
+  return total;
+}
+
+function renderSavings(){
+  const rows = [
+    {key:'member1', name:ownerName('member1'), dot:'m1'},
+    {key:'member2', name:ownerName('member2'), dot:'m2'}
+  ];
+  $('savingsRows').innerHTML = rows.map(row=>{
+    const budget = row.key==='member1' ? settings.member1Budget : settings.member2Budget;
+    if(!budget || budget<=0){
+      return `<div class="savings-row"><span class="who"><span class="who-dot ${row.dot}"></span>${row.name}</span><span class="val" style="font-size:12px;color:var(--muted);">未設定預算</span></div>`;
+    }
+    const saved = computeSavings(row.key);
+    const negClass = saved<0 ? 'style="color:var(--red);"' : '';
+    return `<div class="savings-row"><span class="who"><span class="who-dot ${row.dot}"></span>${row.name}</span><span class="val" ${negClass}>${saved<0?'-':''}${amt(Math.abs(saved))}</span></div>`;
+  }).join('');
+}
+
+let amountsHidden = true;
+function amt(n){
+  return amountsHidden ? 'NT$•••' : `NT$${fmtInt(n)}`;
+}
+function amtFull(n){
+  return `NT$${fmtInt(n)}`;
+}
+
+function statusPool(){
+  return records.filter(r=> statusFilter==='sold' ? r.sold : !r.sold);
+}
+
+function renderChips(){
+  let pool = statusPool();
+  if(memberFilter!=='all') pool = pool.filter(r=>r.owner===memberFilter);
+  const counts = {};
+  pool.forEach(r=>{ (r.characters||[]).forEach(c=>{ counts[c]=(counts[c]||0)+1; }); });
+  const present = [...CHARACTERS, ...Object.keys(counts).filter(c=>!CHARACTERS.includes(c))].filter(c=>counts[c]);
+  const allLabel = statusFilter==='sold' ? '賣出的全部角色' : '全部角色';
+  let html = `<div class="chip ${currentFilter==='全部'?'active':''}" data-c="全部">${allLabel} ${pool.length}</div>`;
+  present.forEach(c=>{
+    html += `<div class="chip ${currentFilter===c?'active':''}" data-c="${c}">${c} ${counts[c]}</div>`;
+  });
+  $('chipsRow').innerHTML = html;
+  $('chipsRow').querySelectorAll('.chip').forEach(el=>{
+    el.addEventListener('click', ()=>{ currentFilter = el.dataset.c; render(); });
+  });
+}
+
+function getFilteredSorted(){
+  let list = statusPool();
+  if(memberFilter!=='all') list = list.filter(r=>r.owner===memberFilter);
+  if(currentFilter!=='全部') list = list.filter(r=>(r.characters||[]).includes(currentFilter));
+  const q = $('searchInput').value.trim().toLowerCase();
+  if(q) list = list.filter(r=> r.name.toLowerCase().includes(q) || (r.characters||[]).some(c=>c.toLowerCase().includes(q)));
+  const sortVal = $('sortSelect').value;
+  if(sortVal==='new') list.sort((a,b)=> b.addedAt-a.addedAt);
+  else if(sortVal==='name') list.sort((a,b)=> a.name.localeCompare(b.name,'zh-Hant'));
+  else if(sortVal==='priceHigh') list.sort((a,b)=> (b.paid+b.shipping)-(a.paid+a.shipping));
+  else if(sortVal==='priceLow') list.sort((a,b)=> (a.paid+a.shipping)-(b.paid+b.shipping));
+  return list;
+}
+
+function recordImgSrc(r){
+  return r.customImg || r.img || '';
+}
+
+function soldStampHtml(r){
+  return r.sold ? `<div class="sold-stamp"><span>賣出</span></div>` : '';
+}
+
+function renderGrid(){
+  const list = getFilteredSorted();
+  const grid = $('grid');
+  const totalRecords = records.length;
+  $('emptyState').style.display = totalRecords===0 ? 'block':'none';
+  if(totalRecords===0){ grid.innerHTML=''; $('shelfGrid').innerHTML=''; return; }
+  if(list.length===0){
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:var(--muted);font-size:12.5px;padding:20px 0;">沒有符合的收藏</div>`;
+    $('shelfGrid').innerHTML = `<div style="grid-column:1/-1;text-align:center;color:var(--muted);font-size:12.5px;padding:16px 0;">沒有符合的收藏</div>`;
+    return;
+  }
+
+  // 明細（卡片）
+  grid.innerHTML = list.map(r=>{
+    const officialTwd = (r.jpy||0)*rate;
+    const paidTotal = (r.paid||0)+(r.shipping||0);
+    const diff = paidTotal - officialTwd;
+    const diffClass = diff>0 ? 'up' : (diff<0 ? 'down':'');
+    const diffText = diff===0 ? '與官網定價相同' : (diff>0 ? `加價 ${amt(Math.abs(diff))}` : `省下 ${amt(Math.abs(diff))}`);
+    const imgHtml = imgTag(recordImgSrc(r));
+    const siteLink = r.url ? `<a class="site-link" href="${r.url}" target="_blank" rel="noopener">↗ 查看官網</a>` : '';
+    const dotClass = r.owner==='member2' ? 'm2':'m1';
+    const tagsHtml = (r.characters||[]).map(c=>`<span class="tag">${escapeHtml(c)}</span>`).join('') + (r.depositUnpaid ? `<span class="tag unpaid">尾款未付</span>`:'');
+    return `
+      <div class="card" data-id="${r.id}">
+        <div class="img-wrap">
+          ${imgHtml}
+          ${soldStampHtml(r)}
+          <div class="owner-badge"><span class="who-dot ${dotClass}"></span>${ownerName(r.owner)}</div>
+          <div class="card-actions">
+            <button class="icon-btn edit-btn" data-id="${r.id}" title="編輯">✏️</button>
+          </div>
+        </div>
+        <div class="body">
+          <div class="name">${escapeHtml(r.name)}</div>
+          <div class="tag-row">${tagsHtml}</div>
+          <div class="price-row">
+            <div class="line"><span class="lbl">總額</span><span class="paid">${amt(paidTotal)}</span></div>
+            ${r.depositUnpaid ? `<div class="line"><span class="lbl">已付訂金</span><span>${amt(r.depositPaid||0)}</span></div><div class="line"><span class="lbl">需付尾款</span><span style="color:var(--red);">${amt(r.balanceDue||0)}</span></div>` : ''}
+            ${r.sold ? `<div class="line"><span class="lbl">回收</span><span class="paid" style="color:var(--green);">${amt(r.resale||0)}</span></div>` : ''}
+          </div>
+          <div class="diff ${diffClass}">${diffText}</div>
+          ${siteLink}
+        </div>
+      </div>`;
+  }).join('');
+
+  grid.querySelectorAll('.edit-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const rec = records.find(r=>r.id===btn.dataset.id);
+      if(rec) openEditSheet(rec);
+    });
+  });
+
+  // 圖鑑（展示櫃）
+  $('shelfGrid').innerHTML = list.map(r=>{
+    const imgHtml = imgTag(recordImgSrc(r));
+    return `<div class="shelf-item" data-id="${r.id}">
+      ${imgHtml}
+      ${soldStampHtml(r)}
+      ${r.depositUnpaid ? `<div class="unpaid-dot" title="尾款未付"></div>` : ''}
+    </div>`;
+  }).join('');
+  $('shelfGrid').querySelectorAll('.shelf-item').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const rec = records.find(r=>r.id===el.dataset.id);
+      if(rec) openEditSheet(rec);
+    });
+  });
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function renderStats(){
+  const totalBuy = records.reduce((s,r)=>s+(r.paid||0)+(r.shipping||0),0);
+  const totalShipping = records.reduce((s,r)=>s+(r.shipping||0),0);
+  const totalResale = records.filter(r=>r.sold).reduce((s,r)=>s+(r.resale||0),0);
+  const net = totalBuy - totalResale;
+  const active = records.filter(r=>!r.sold);
+  const totalOfficial = active.reduce((s,r)=>s+((r.jpy||0)*rate),0);
+  const activePaid = active.reduce((s,r)=>s+(r.paid||0),0);
+  const diff = activePaid - totalOfficial;
+
+  $('heroNet').textContent = amt(net);
+  $('heroSub').textContent = `買入 ${amt(totalBuy)}（含運 ${amt(totalShipping)}）`;
+  $('statOfficial').textContent = amt(totalOfficial);
+  const diffEl = $('statDiff');
+  diffEl.textContent = amountsHidden ? 'NT$•••' : `${diff>=0?'+':'-'}NT$${fmtInt(Math.abs(diff))}`;
+  diffEl.className = 'v ' + (diff>0?'red':(diff<0?'green':''));
+  $('statDiffSub').textContent = diff>0 ? '總額比原價加價' : (diff<0 ? '總額比原價省下' : '總額與原價相同');
+  $('statCount').textContent = active.length;
+  $('statCountSub').textContent = `不含已賣出的 ${records.filter(r=>r.sold).length} 款`;
+  $('statResale').textContent = amt(totalResale);
+  $('statResaleSub').textContent = `已賣出 ${records.filter(r=>r.sold).length} 款`;
+}
+
+function render(){
+  renderStats();
+  renderBudget();
+  renderSavings();
+  renderMemberRow();
+  renderChips();
+  renderGrid();
+}
+
+// ---------- init ----------
+async function init(){
+  populateStaticSelects();
+  $('budgetMonth').value = new Date().toISOString().slice(0,7);
+  await loadAll();
+  $('rateInput').value = rate;
+  switchMainTab('gallery');
+  render();
+
+  $('rateInput').addEventListener('change', async ()=>{
+    const v = parseFloat($('rateInput').value);
+    if(v>0){ rate = v; await persistRate(); render(); if($('overlay').classList.contains('show')){ if(mode==='db') updateDbPreview(); else switchMode('manual'); } }
+  });
+  $('budgetMonth').addEventListener('change', renderBudget);
+  $('searchInput').addEventListener('input', render);
+  $('sortSelect').addEventListener('change', render);
+  $('fabAdd').addEventListener('click', openAddSheet);
+  $('closeSheet').addEventListener('click', closeSheet);
+  $('overlay').addEventListener('click', (e)=>{ if(e.target.id==='overlay') closeSheet(); });
+  $('modeDb').addEventListener('click', ()=>switchMode('db'));
+  $('modeManual').addEventListener('click', ()=>switchMode('manual'));
+  $('dbSeries').addEventListener('change', populateCharacterForSeries);
+  $('dbCharacter').addEventListener('change', updateDbPreview);
+  $('manualJpy').addEventListener('input', ()=>{
+    const jpy = parseFloat($('manualJpy').value)||0;
+    $('officialTwdDisplay').value = `NT$${fmtInt(jpy*rate)}`;
+    checkWarn();
+  });
+  $('paidInput').addEventListener('input', checkWarn);
+  $('shippingInput').addEventListener('input', checkWarn);
+  $('dateInput').addEventListener('change', checkBudgetWarn);
+  $('warnConfirm').addEventListener('change', updateSaveEnabled);
+  $('saveBtn').addEventListener('click', saveRecord);
+  $('deleteBtn').addEventListener('click', deleteRecord);
+
+  $('uploadBox').addEventListener('click', ()=> $('fileInput').click());
+  $('fileInput').addEventListener('change', (e)=>{ if(e.target.files[0]) handleFile(e.target.files[0]); });
+  $('uploadBox').addEventListener('dragover', (e)=>{ e.preventDefault(); });
+  $('uploadBox').addEventListener('drop', (e)=>{ e.preventDefault(); if(e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+  $('removePhotoBtn').addEventListener('click', (e)=>{ e.stopPropagation(); pendingCustomImg=''; resetUploadBox(); pendingCustomImg=''; });
+
+  $('unpaidToggle').addEventListener('change', ()=>{
+    $('unpaidFields').classList.toggle('show', $('unpaidToggle').checked);
+    checkBudgetWarn();
+  });
+  $('soldToggle').addEventListener('change', ()=>{
+    $('soldFields').classList.toggle('show', $('soldToggle').checked);
+  });
+
+  function toggleAmountsHidden(){
+    amountsHidden = !amountsHidden;
+    const icon = amountsHidden ? '👁' : '🙈';
+    $('eyeBtn').textContent = icon;
+    $('savingsEyeBtn').textContent = icon;
+    renderStats(); renderGrid(); renderBudget(); renderSavings();
+  }
+  $('eyeBtn').addEventListener('click', toggleAmountsHidden);
+  $('savingsEyeBtn').addEventListener('click', toggleAmountsHidden);
+
+  $('statsToggle').addEventListener('click', ()=>{
+    const expand = $('statsExpand');
+    const showing = expand.style.display !== 'none';
+    expand.style.display = showing ? 'none' : 'block';
+    $('statsToggle').textContent = showing ? '▾ 更多統計（原價/差額/收藏款數/賣出回收）' : '▴ 收合統計';
+  });
+
+  $('tabGallery').addEventListener('click', ()=>switchMainTab('gallery'));
+  $('tabDetail').addEventListener('click', ()=>switchMainTab('detail'));
+  $('statusActive').addEventListener('click', ()=>{ statusFilter='active'; currentFilter='全部'; $('statusActive').classList.add('active'); $('statusSold').classList.remove('active'); render(); });
+  $('statusSold').addEventListener('click', ()=>{ statusFilter='sold'; currentFilter='全部'; $('statusSold').classList.add('active'); $('statusActive').classList.remove('active'); render(); });
+
+  $('settingsBtn').addEventListener('click', openSettings);
+  $('closeSettings').addEventListener('click', closeSettings);
+  $('settingsOverlay').addEventListener('click', (e)=>{ if(e.target.id==='settingsOverlay') closeSettings(); });
+  $('saveSettingsBtn').addEventListener('click', saveSettings);
+}
+
+init();
+</script>
+</body>
+</html>
