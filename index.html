@@ -572,6 +572,12 @@
   }
   .upload-box .placeholder-txt{font-size:12.5px;color:var(--muted);font-weight:600;}
   .upload-box img{max-width:100%;max-height:140px;border-radius:10px;display:block;}
+  .upload-box.uploading{opacity:.55;cursor:wait;}
+  .upload-box.uploading::after{
+    content:'📤 上傳中…';
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.7);font-size:12.5px;font-weight:700;color:var(--pink-deep);
+  }
   .upload-hint{font-size:10.5px;color:var(--muted);margin:6px 2px 13px;line-height:1.5;}
   .remove-photo-link{color:var(--red);font-weight:700;font-size:11px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;}
 
@@ -689,6 +695,9 @@
   }
   .settings-block .sb-title{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;margin-bottom:10px;}
 </style>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
 </head>
 <body>
 
@@ -1009,6 +1018,24 @@
 </div>
 
 <script>
+// ---------- Firebase 設定 ----------
+// 請把下面六個值換成你自己 Firebase 專案「Project settings → General → 你的網頁應用程式」裡看到的 firebaseConfig
+const firebaseConfig = {
+  apiKey: "AIzaSyD8YnhgzZKAXcas_VmMXyEFYYxiNDbOnU8",
+  authDomain: "chiikawa-collect.firebaseapp.com",
+  databaseURL: "https://chiikawa-collect-default-rtdb.firebaseio.com",
+  projectId: "chiikawa-collect",
+  storageBucket: "chiikawa-collect.firebasestorage.app",
+  messagingSenderId: "580296025969",
+  appId: "1:580296025969:web:5ed8adf713b70d449db8d0",
+  measurementId: "G-L4PN879S3F"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const storage = firebase.storage();
+// 兩人共用同一份資料，都讀寫這一份固定的文件
+const DOC_REF = db.collection('chiikawa').doc('shared_data');
+
 // ---------- 商品資料庫（吉伊卡哇市場官方吊飾，節錄常見款式）----------
 const PRODUCT_DB = [
 {id:'4571609398752',name:'吉伊卡哇樂園 迷你吊飾鑰匙圈（拉麵鎧甲先生）',character:'盔甲',series:'吉伊卡哇樂園：迷你吊飾鑰匙圈',jpy:1430,img:'https://chiikawamarket.jp/cdn/shop/files/4571609398752_1.jpg?v=1788138413&width=533'},
@@ -1146,7 +1173,8 @@ let selectedOwner = 'member1';
 let mainTab = 'gallery'; // gallery | detail
 let statusFilter = 'active'; // active | sold
 let selectedChars = []; // 目前表單中已選的角色
-let pendingCustomImg = null; // 上傳照片的 dataURL（null 表示未變更；'' 表示使用者主動移除）
+let pendingCustomImg = null; // 上傳照片的網址（null 表示未變更；'' 表示使用者主動移除）
+let uploadInProgress = false; // 照片正在上傳到 Firebase Storage
 
 const $ = (id)=>document.getElementById(id);
 const fmtInt = (n)=> Math.round(n).toLocaleString('zh-Hant-TW');
@@ -1313,14 +1341,27 @@ function renderOwnerPicker(){
 
 function resetUploadBox(){
   pendingCustomImg = null;
+  uploadInProgress = false;
+  $('uploadBox').classList.remove('uploading');
   $('uploadBox').innerHTML = '<span class="placeholder-txt" id="uploadPlaceholder">📷 點擊或拖曳上傳照片</span>';
   $('removePhotoBtn').style.display = 'none';
   $('fileInput').value = '';
+  updateSaveButtonUploadState();
 }
 
 function showUploadPreview(dataUrl){
   $('uploadBox').innerHTML = `<img src="${dataUrl}" alt="">`;
   $('removePhotoBtn').style.display = 'inline';
+}
+
+function updateSaveButtonUploadState(){
+  if(uploadInProgress){
+    $('saveBtn').textContent = '📤 照片上傳中…請稍候';
+    $('saveBtn').disabled = true;
+  }else{
+    $('saveBtn').textContent = '儲存收藏';
+    updateSaveEnabled();
+  }
 }
 
 function handleFile(file){
@@ -1329,15 +1370,38 @@ function handleFile(file){
   reader.onload = (e)=>{
     const img = new Image();
     img.onload = ()=>{
-      const maxDim = 320;
+      const maxDim = 500; // 存到 Firebase Storage，不受 Firestore 1MB 文件限制，畫質可以放大一點
       let w=img.width, h=img.height;
       if(w>h){ if(w>maxDim){ h=Math.round(h*maxDim/w); w=maxDim; } }
       else{ if(h>maxDim){ w=Math.round(w*maxDim/h); h=maxDim; } }
       const canvas = document.createElement('canvas');
       canvas.width=w; canvas.height=h;
       canvas.getContext('2d').drawImage(img,0,0,w,h);
-      pendingCustomImg = canvas.toDataURL('image/jpeg',0.65);
-      showUploadPreview(pendingCustomImg);
+
+      // 先用本機壓縮後的圖立即預覽，不用等上傳完成
+      showUploadPreview(canvas.toDataURL('image/jpeg',0.75));
+      $('uploadBox').classList.add('uploading');
+      uploadInProgress = true;
+      updateSaveButtonUploadState();
+
+      canvas.toBlob((blob)=>{
+        const path = 'photos/' + Date.now() + '_' + Math.random().toString(36).slice(2,8) + '.jpg';
+        storage.ref().child(path).put(blob)
+          .then(snap=>snap.ref.getDownloadURL())
+          .then(url=>{
+            pendingCustomImg = url; // 改存 Firebase Storage 的網址，不是 dataURL
+            uploadInProgress = false;
+            $('uploadBox').classList.remove('uploading');
+            updateSaveButtonUploadState();
+          })
+          .catch(err=>{
+            console.error('照片上傳失敗', err);
+            alert('照片上傳失敗，請確認 Firebase Storage 是否已啟用、規則是否正確，或換一張較小的照片再試一次。');
+            uploadInProgress = false;
+            $('uploadBox').classList.remove('uploading');
+            updateSaveButtonUploadState();
+          });
+      }, 'image/jpeg', 0.75);
     };
     img.src = e.target.result;
   };
@@ -1511,32 +1575,21 @@ async function saveSettings(){
   render();
 }
 
-// ---------- storage (shared between both people) ----------
+// ---------- storage (Firebase Firestore，兩人共用同一份文件) ----------
 async function persistRecords(){
-  try{ await window.storage.set('chiikawa_records', JSON.stringify(records), true); }
-  catch(e){ console.error('save records failed', e); alert('儲存失敗，可能是照片太大或網路問題，請再試一次。'); }
+  try{ await DOC_REF.set({records: records}, {merge:true}); }
+  catch(e){ console.error('save records failed', e); alert('儲存失敗，可能是照片太大、Firebase 設定不對，或網路問題，請再試一次。'); }
 }
 async function persistRate(){
-  try{ await window.storage.set('chiikawa_rate', String(rate), true); }
+  try{ await DOC_REF.set({rate: rate}, {merge:true}); }
   catch(e){ console.error('save rate failed', e); }
 }
 async function persistSettings(){
-  try{ await window.storage.set('chiikawa_settings', JSON.stringify(settings), true); }
+  try{ await DOC_REF.set({settings: settings}, {merge:true}); }
   catch(e){ console.error('save settings failed', e); }
 }
-async function loadAll(){
-  try{
-    const r = await window.storage.get('chiikawa_records', true);
-    if(r && r.value) records = JSON.parse(r.value);
-  }catch(e){ records = []; }
-  try{
-    const rt = await window.storage.get('chiikawa_rate', true);
-    if(rt && rt.value) rate = parseFloat(rt.value)||0.21;
-  }catch(e){ /* keep default */ }
-  try{
-    const s = await window.storage.get('chiikawa_settings', true);
-    if(s && s.value) settings = Object.assign(settings, JSON.parse(s.value));
-  }catch(e){ /* keep default */ }
+
+function normalizeRecords(){
   records.forEach(r=>{
     if(!r.owner) r.owner='member1';
     if(!r.characters) r.characters = r.character ? [r.character] : ['其他'];
@@ -1548,6 +1601,42 @@ async function loadAll(){
     if(typeof r.resale!=='number') r.resale = 0;
   });
 }
+
+async function loadAll(){
+  try{
+    const snap = await DOC_REF.get();
+    if(snap.exists){
+      const data = snap.data();
+      if(data.records) records = data.records;
+      if(typeof data.rate === 'number') rate = data.rate;
+      if(data.settings) settings = Object.assign(settings, data.settings);
+    }
+  }catch(e){
+    console.error('load failed', e);
+    alert('讀取雲端資料失敗，請確認 Firebase 設定（firebaseConfig）跟 Firestore 安全規則是否正確。');
+  }
+  normalizeRecords();
+}
+
+// 即時同步：另一個人存了新資料，這邊會自動更新畫面
+function watchRemoteChanges(){
+  DOC_REF.onSnapshot((snap)=>{
+    if(!snap.exists) return;
+    const data = snap.data();
+    let changed = false;
+    if(data.records && JSON.stringify(data.records)!==JSON.stringify(records)){
+      records = data.records; normalizeRecords(); changed = true;
+    }
+    if(typeof data.rate==='number' && data.rate!==rate){
+      rate = data.rate; $('rateInput').value = rate; changed = true;
+    }
+    if(data.settings && JSON.stringify(data.settings)!==JSON.stringify(settings)){
+      settings = Object.assign(settings, data.settings); changed = true;
+    }
+    if(changed) render();
+  }, (err)=>{ console.error('同步監聽失敗', err); });
+}
+
 
 // ---------- main tab switching ----------
 function switchMainTab(t){
@@ -1817,6 +1906,7 @@ async function init(){
   $('rateInput').value = rate;
   switchMainTab('gallery');
   render();
+  watchRemoteChanges();
 
   $('rateInput').addEventListener('change', async ()=>{
     const v = parseFloat($('rateInput').value);
